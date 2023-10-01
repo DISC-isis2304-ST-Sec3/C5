@@ -1,0 +1,49 @@
+package uniandes.modelo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "reservas_servicios")
+public class ReservaServicio {
+    public Integer servicios_idServicios;
+    public Integer usuarios_idUser;
+    private LocalDateTime fechaReservaServicio;
+
+
+    @EmbeddedId
+    private ReservaServicioPK pk;
+    public ReservaServicio(Servicio idServicio, Habitacion numeroHabitacion, LocalDateTime fecha, Integer duracion){
+        this.pk = new ReservaServicioPK(idServicio, numeroHabitacion);
+        this.fecha = fecha;
+        this.duracion = duracion;
+    }
+    public ReservaServicio()
+
+    public Integer getIdServicios() {
+        return servicios_idServicios;
+    }
+    public Integer getIdUser() {
+        return servicios_idServicios;
+    }
+    public LocalDateTime getFechaReservaServicio() {
+        return servicios_idServicios;
+    }
+    public void setIdServicios(Integer fecha) {
+        this.fecha = servicios_idServicios;
+    }
+    public void setIdUser(Integer duracion) {
+        this.duracion = duracion;
+    }
+    public ReservaServicioPK getPk() {
+        return pk;
+    }
+    public void setPk(ReservaServicioPK pk) {
+        this.pk = pk;
+    }
+
+    
+}
