@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4BC8CFAC-C0E9-8581-500D-0536ABC98005" name="TiposH">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>B450FCD4-D099-E624-1672-23FDFED58BFB</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombreTipo" id="8BD4BAC5-A1CA-B505-63AD-04D9E1C7C142">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>0FF33BFA-FCDB-7220-6750-EFB9E1BE4F4D</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="Doble" description=""/>
+<valueDef value="Familiar" description=""/>
+<valueDef value="Sencilla" description=""/>
+<valueDef value="Suite" description=""/>
+<valueDef value="SuitePresidencial" description=""/>
+</listOfValues>
+<defaultValue>Familiar</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dotacion" id="43151DB4-CA10-04BE-2466-5F0AB67975B4">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>BC418FDA-0010-A1A0-B75B-79E8CDD4F288</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>512 BYTE</dataTypeSize>
+<ownDataTypeParameters>512 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="1375501F-1C2A-61D8-B51A-FEFE229B1AAA">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>67B95943-9691-DE1E-C4E2-B39B9A581709</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costoNoche" id="E3E39420-15D5-7CCA-B330-A68D9011CD1B">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>6DC0EEBB-1F5A-FC13-0D32-D33F295B185C</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,8,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="52C13B6F-B3FB-CB96-7F30-5E188D39EF47" name="TiposH_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>2C391F28-0369-C1EE-BB8C-7278C267A2D9</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8BD4BAC5-A1CA-B505-63AD-04D9E1C7C142"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

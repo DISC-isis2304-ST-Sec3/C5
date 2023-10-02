@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DBD17770-4B32-3EFC-3399-51F4C99B7557" name="Planes">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>BB0F788E-57D2-5D79-1DDA-7724BA1AC604</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombrePlan" id="D00F6813-4874-B985-CDA7-FF2DCDA5FB03">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>F0516B39-403E-4D2F-78FD-864DAA11F37B</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descuento" id="60DC844A-ED72-C5C4-D831-C91E81761D82">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>E3728323-26DB-F3EB-8B5B-DD97A03693E1</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="periodoVigenciaInicial" id="5D388749-D847-E625-3716-B662998413DC">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>96010668-7EEB-D083-342D-C4C7B81AF91E</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="periodoVigenciaFinal" id="DAE43D9E-839A-05CC-1E48-A495071FCE04">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>D0C0D712-3201-D703-C0DC-74C05C428CFF</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="28322071-5C4C-6E48-9857-0DE747D27478" name="Planes_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>76F94CDA-15F2-55CE-DF0A-4B46CBC993BD</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D00F6813-4874-B985-CDA7-FF2DCDA5FB03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

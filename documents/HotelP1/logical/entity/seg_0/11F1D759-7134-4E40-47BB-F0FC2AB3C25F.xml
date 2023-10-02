@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="11F1D759-7134-4E40-47BB-F0FC2AB3C25F" name="Habitaciones">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 04:29:04 UTC</createdTime>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="numero" id="9C6FAAB7-4E94-BDE1-9EF1-392724C03B30">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 04:29:17 UTC</createdTime>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombreTipo" id="949001C4-1BC6-793C-C0FF-2A34BC203BF3">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 15:07:06 UTC</createdTime>
+<generatorID>7A112D35-76E3-3E13-AB25-3873C6F3E7E0</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<referedAttribute>0FF33BFA-FCDB-7220-6750-EFB9E1BE4F4D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="08D63C0D-5027-F632-972E-32C6A72DBA8D" name="Habitaciones PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 04:29:28 UTC</createdTime>
+<ownerDesignName>HotelP1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9C6FAAB7-4E94-BDE1-9EF1-392724C03B30</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

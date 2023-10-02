@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5A2697F1-3E6F-6D12-37AE-E7C07F0583A6" name="Consumos">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>8263130E-4EA7-C864-F732-63161354891A</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idConsumo" id="3EE92962-7866-9417-D28E-CFD259515774">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>FFFAD1C7-A197-3FE9-91AD-8133EE96EFB3</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="98CE707E-1EB2-7E27-4A32-05E4FA7EB30B">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>19A6164D-E050-A769-EEDA-C7537B6B12EE</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="8467D3AC-E77E-7411-8F54-CD70CD30E2FE">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>6ACFAB1E-C8DD-DE4C-4E6D-E4558A295AAD</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="1CE3D9B1-E825-282E-4FD7-CB2ABD3BF93F">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>CA771A40-0B45-37FF-F573-ECF7ECFE7177</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Servicios_idServicio" id="E8134CF8-ECD3-B6C0-B98B-95545619274D">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>C9A567EB-5A73-E8EE-FBBB-3C872D9C5938</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4F48CB44-D3A1-1C7F-6DD8-92A59C2318FE" referredColumn="9DADD4B7-C257-8C57-76C5-F85B73E2A117"/>
+</associations>
+</Column>
+<Column name="Reservas_idReserva" id="FAAD7CC7-A681-EBED-3C0D-3E0BED1CA0A7">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>1C3C1E0A-6C0B-4376-0D7A-00ADAF5D572F</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8DE9A712-A194-44F4-92E7-C3C1DCBA2627" referredColumn="CB845D7C-C119-0197-18A2-A3E6A5C1EF68"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="720B7F49-9344-B047-41FA-889DC536FFA5" name="Consumos_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>8BCB3841-6B30-C98A-1AB7-ACB52AB95440</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3EE92962-7866-9417-D28E-CFD259515774"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="757AFCB8-BDC2-481A-9D4C-2AC7F9081F45" name="Consumos_Reservas_FK">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>68CB4DDF-FA93-21B3-FEBA-D7A8AAC8059C</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FAAD7CC7-A681-EBED-3C0D-3E0BED1CA0A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6FC7D745-F90B-5681-DC45-D0609749648C" name="Consumos_Servicios_FK">
+<createdBy>Usuario</createdBy>
+<createdTime>2023-10-02 02:03:29 UTC</createdTime>
+<generatorID>8F64CCD1-5804-8FC6-7C9A-5DE3DAA050A9</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E8134CF8-ECD3-B6C0-B98B-95545619274D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

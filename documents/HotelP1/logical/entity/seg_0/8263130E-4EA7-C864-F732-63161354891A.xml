@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8263130E-4EA7-C864-F732-63161354891A" name="Consumos">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:18:58 UTC</createdTime>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idConsumo" id="FFFAD1C7-A197-3FE9-91AD-8133EE96EFB3">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:19:02 UTC</createdTime>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="19A6164D-E050-A769-EEDA-C7537B6B12EE">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:19:31 UTC</createdTime>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha" id="6ACFAB1E-C8DD-DE4C-4E6D-E4558A295AAD">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:19:47 UTC</createdTime>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo" id="CA771A40-0B45-37FF-F573-ECF7ECFE7177">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:20:02 UTC</createdTime>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idServicio" id="C9A567EB-5A73-E8EE-FBBB-3C872D9C5938">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:22:26 UTC</createdTime>
+<generatorID>8F64CCD1-5804-8FC6-7C9A-5DE3DAA050A9</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<referedAttribute>41C7B094-D9A4-EACA-855B-EFF37D8047B9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ReservasAlojamiento idReserva" id="1C3C1E0A-6C0B-4376-0D7A-00ADAF5D572F">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 05:16:15 UTC</createdTime>
+<generatorID>68CB4DDF-FA93-21B3-FEBA-D7A8AAC8059C</generatorID>
+<ownerDesignName>HotelP1</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<referedAttribute>62638F74-E2B5-645E-39B0-7141287AA25E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8BCB3841-6B30-C98A-1AB7-ACB52AB95440" name="Consumos PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:19:23 UTC</createdTime>
+<ownerDesignName>HotelP1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FFFAD1C7-A197-3FE9-91AD-8133EE96EFB3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
