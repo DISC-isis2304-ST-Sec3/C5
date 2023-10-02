@@ -16,11 +16,11 @@ import uniandes.edu.co.proyecto.repositorio.PlanRepository;
 @Controller
 public class PlanController {
     @Autowired
-    private PlanRepository palnRepository;
+    private PlanRepository planRepository;
 
     @GetMapping("/planes")
     public String plan(Model model){
-        model.addAttribute("planes", palnRepository.darPlanes());
+        model.addAttribute("planes", planRepository.darPlanes());
         return "planes";
     }
     @GetMapping("/planes/new")
@@ -30,12 +30,12 @@ public class PlanController {
     }
     @PostMapping("/planes/new/save")
     public String planGuardar(@ModelAttribute Plan plan){
-        palnRepository.insertarPlanes(plan.getDescuento(), plan.getPeriodoVigenciaInicial(), plan.getPeriodoVigenciaFinal());;
+        planRepository.insertarPlanes(plan.getDescuento(), plan.getPeriodoVigenciaInicial(), plan.getPeriodoVigenciaFinal());;
         return "redirect:/planes";
     }
     @GetMapping("/planes/{nombrePlan}/edit")
     public String planEditerForm(@PathVariable("nombrePlan") String nombrePlan, Model model){
-        Plan plan = palnRepository.darPlan(nombrePlan);
+        Plan plan = planRepository.darPlan(nombrePlan);
         if(plan != null){
             model.addAttribute("planes", plan);
             return "planEditar";
@@ -45,12 +45,12 @@ public class PlanController {
     }
     @PostMapping("/planes/{nombrePlan}/edit/save")
     public String planEditarGuardar(@PathVariable("nombrePlan") String nombrePlan, @ModelAttribute Plan plan){
-        palnRepository.actualizarPlanes(nombrePlan, plan.getDescuento(), plan.getPeriodoVigenciaInicial(), plan.getPeriodoVigenciaFinal());
+        planRepository.actualizarPlanes(nombrePlan, plan.getDescuento(), plan.getPeriodoVigenciaInicial(), plan.getPeriodoVigenciaFinal());
         return "redirect:/planes";
     }
     @GetMapping("/planes/{nombrePlan}/edit/delete")
     public String planEliminar(@PathVariable("nombrePlan") String nombrePlan){
-        palnRepository.eliminarPlan(nombrePlan);;
+        planRepository.eliminarPlan(nombrePlan);;
         return "redirect:/planes";
     }
 }

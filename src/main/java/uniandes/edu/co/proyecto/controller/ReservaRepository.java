@@ -30,7 +30,7 @@ public class ReservaRepository {
     }
     @PostMapping("/reservas/new/save")
     public String reservaGuardar(@ModelAttribute Reserva reserva){
-        reservasRepository.insertarReservas(reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCantidadPersonas(), reserva.getUsuario_cedula().getCedula(), reserva.getPlanes_nombrePlan().getNombrePlan(), reserva.getHabitaciones_numero().getNumero());;
+        reservasRepository.insertarReservas(reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCantidadPersonas(), reserva.getUsuario_cedula().getCedula(), reserva.getPlanes_nombrePlan().getNombrePlan(), reserva.getHabitaciones_numero().getNumero(), reserva.getFechaCheckIn(), reserva.getFechaCheckOut());
         return "redirect:/reservas";
     }
     @GetMapping("/reservas/{idReserva}/edit")
@@ -45,7 +45,7 @@ public class ReservaRepository {
     }
     @PostMapping("/reservas/{idReserva}/edit/save")
     public String reservaEditarGuardar(@PathVariable("idReserva") int idReserva, @ModelAttribute Reserva reserva){
-        reservasRepository.actualizarReservas(idReserva, reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCantidadPersonas(), reserva.getUsuario_cedula().getCedula(), reserva.getPlanes_nombrePlan().getNombrePlan(), reserva.getHabitaciones_numero().getNumero());;
+        reservasRepository.actualizarReservas(idReserva, reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCantidadPersonas(), reserva.getUsuario_cedula().getCedula(), reserva.getPlanes_nombrePlan().getNombrePlan(), reserva.getHabitaciones_numero().getNumero(), reserva.getFechaCheckIn(), reserva.getFechaCheckOut());
         return "redirect:/habitreservasaciones";
     }
     @GetMapping("/reservas/{idReserva}/edit/delete")

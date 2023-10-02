@@ -22,13 +22,13 @@ public interface ReservasRepository extends JpaRepository<Reserva,Integer>{
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO reservas (idReserva, fechaEntrada, fechaSalida, cantidadPersonas, Usuarios_cedula, Planes_nombrePlan, Habitaciones_numero) VALUES ( hotelAndes_sequence.nextval , :fechaEntrada, :fechaSalida, :cantidadPersonas, :Usuarios_cedula, :Planes_nombrePlan, :Habitaciones_numero)", nativeQuery = true)
-    void insertarReservas(@Param("fechaEntrada") Date fechaEntrada, @Param("fechaSalida") Date fechaSalida, @Param("cantidadPersonas") int cantidadPersonas, @Param("Usuarios_cedula") Integer Usuarios_cedula, @Param("Planes_nombrePlan") String Planes_nombrePlan, @Param("Habitaciones_numero") Integer Habitaciones_numero);
+    @Query(value = "INSERT INTO reservas (idReserva, fechaEntrada, fechaSalida, cantidadPersonas, Usuarios_cedula, Planes_nombrePlan, Habitaciones_numero, fechaCheckIn, fechaCheckOut) VALUES ( hotelAndes_sequence.nextval , :fechaEntrada, :fechaSalida, :cantidadPersonas, :Usuarios_cedula, :Planes_nombrePlan, :Habitaciones_numero, :fechaCheckIn, :fechaCheckOut)", nativeQuery = true)
+    void insertarReservas(@Param("fechaEntrada") Date fechaEntrada, @Param("fechaSalida") Date fechaSalida, @Param("cantidadPersonas") int cantidadPersonas, @Param("Usuarios_cedula") Integer Usuarios_cedula, @Param("Planes_nombrePlan") String Planes_nombrePlan, @Param("Habitaciones_numero") Integer Habitaciones_numero, @Param("fechaCheckIn") Date fechaCheckIn, @Param("fechaCheckOut") Date fechaCheckOut);
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE reservas SET fechaEntrada = :fechaEntrada, fechaSalida = :fechaSalida, cantidadPersonas = :cantidadPersonas, Usuarios_cedula = :Usuarios_cedula, Planes_nombrePlan = :Planes_nombrePlan, Habitaciones_numero = :Habitaciones_numero WHERE idReserva = :idReserva", nativeQuery = true)
-    void actualizarReservas(@Param("idReserva") int idReserva, @Param("fechaEntrada") Date fechaEntrada, @Param("fechaSalida") Date fechaSalida, @Param("cantidadPersonas") int cantidadPersonas, @Param("Usuarios_cedula") Integer Usuarios_cedula, @Param("Planes_nombrePlan") String Planes_nombrePlan, @Param("Habitaciones_numero") Integer Habitaciones_numero);
+    @Query(value = "UPDATE reservas SET fechaEntrada = :fechaEntrada, fechaSalida = :fechaSalida, cantidadPersonas = :cantidadPersonas, Usuarios_cedula = :Usuarios_cedula, Planes_nombrePlan = :Planes_nombrePlan, Habitaciones_numero = :Habitaciones_numero, fechaCheckIn = :fechaCheckIn, fechaCheckOut = :fechaCheckOut WHERE idReserva = :idReserva", nativeQuery = true)
+    void actualizarReservas(@Param("idReserva") int idReserva, @Param("fechaEntrada") Date fechaEntrada, @Param("fechaSalida") Date fechaSalida, @Param("cantidadPersonas") int cantidadPersonas, @Param("Usuarios_cedula") Integer Usuarios_cedula, @Param("Planes_nombrePlan") String Planes_nombrePlan, @Param("Habitaciones_numero") Integer Habitaciones_numero, @Param("fechaCheckIn") Date fechaCheckIn, @Param("fechaCheckOut") Date fechaCheckOut);
     
     @Modifying
     @Transactional

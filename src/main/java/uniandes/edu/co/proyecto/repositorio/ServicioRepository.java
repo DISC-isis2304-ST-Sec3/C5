@@ -28,7 +28,7 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer>{
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE servicios SET nombreServicio = :nombreCerveza, descripcion = :descripcion, horario = :horario, capacidad = :capacidad, costo = :costo, menu = :menu WHERE idServicio = :idServicio", nativeQuery = true)
+    @Query(value = "UPDATE servicios SET nombreServicio = :nombreServicio, descripcion = :descripcion, horario = :horario, capacidad = :capacidad, costo = :costo, menu = :menu WHERE idServicio = :idServicio", nativeQuery = true)
     void actualizarServicios(@Param("idServicio") int idServicio, @Param("nombreServicio") String nombreServicio, @Param("descripcion") String descripcion, @Param("horario") String horario, @Param("capacidad") int capacidad, @Param("costo") double costo, @Param("menu") String menu);
     
     @Modifying

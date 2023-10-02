@@ -20,6 +20,8 @@ public class Reserva {
     private Date fechaEntrada;
     private Date fechaSalida;
     private Integer cantidadPersonas;
+    private Date fechaCheckIn;
+    private Date fechaCheckOut;
 
     @OneToOne
     @JoinColumn(name = "Usuario_cedula", referencedColumnName = "cedula")
@@ -33,7 +35,7 @@ public class Reserva {
     @JoinColumn(name = "Habitaciones_numero",referencedColumnName = "numero")
     private Habitacion Habitaciones_numero;
 
-    public Reserva(Date fechaEntrada, Date fechaSalida, Integer cantidadPersonas, Usuario Usuario_cedula, Plan Planes_nombrePlan, Habitacion Habitaciones_numero){
+    public Reserva(Date fechaEntrada, Date fechaSalida, Integer cantidadPersonas, Usuario Usuario_cedula, Plan Planes_nombrePlan, Habitacion Habitaciones_numero, Date fechaCheckIn, Date fechaCheckOut){
 
         this.fechaEntrada=fechaEntrada;
         this.fechaSalida=fechaSalida;
@@ -41,6 +43,8 @@ public class Reserva {
         this.Usuario_cedula=Usuario_cedula;
         this.Habitaciones_numero=Habitaciones_numero;
         this.Planes_nombrePlan=Planes_nombrePlan;
+        this.fechaCheckIn=fechaCheckIn;
+        this.fechaCheckOut=fechaCheckOut;
     }
     public Reserva(){;}
     public Integer getIdReserva() {
@@ -85,5 +89,18 @@ public class Reserva {
     public void setHabitaciones_numero(Habitacion habitaciones_numero) {
         Habitaciones_numero = habitaciones_numero;
     }
+    public Date getFechaCheckIn() {
+        return fechaCheckIn;
+    }
+    public void setFechaCheckIn(Date fechaCheckIn) {
+        this.fechaCheckIn = fechaCheckIn;
+    }
+    public Date getFechaCheckOut() {
+        return fechaCheckOut;
+    }
+    public void setFechaCheckOut(Date fechaCheckOut) {
+        this.fechaCheckOut = fechaCheckOut;
+    }
+    
     
 }

@@ -22,7 +22,7 @@ public class HabitacionController {
         model.addAttribute("habitaciones", habitacionRepository.darHabitaciones());
         return "habitaciones";
     }
-    @GetMapping("/tiposH/new")
+    @GetMapping("/habitaciones/new")
     public String habitacionForm(Model model){
         model.addAttribute("tipoH", new Habitacion());
         return "habitacionNuevo";

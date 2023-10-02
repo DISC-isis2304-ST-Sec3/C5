@@ -17,7 +17,7 @@ public interface PlanRepository extends JpaRepository<Plan, String> {
     @Query(value = "SELECT * FROM planes", nativeQuery = true)
     Collection<Plan> darPlanes();
 
-    @Query(value = "SELECT * FROM planes WHERE nombrePlan= :nombreePlan", nativeQuery = true)
+    @Query(value = "SELECT * FROM planes WHERE nombrePlan= :nombrePlan", nativeQuery = true)
     Plan darPlan(@Param("nombrePlan") String nombrePlan);
 
     @Modifying
