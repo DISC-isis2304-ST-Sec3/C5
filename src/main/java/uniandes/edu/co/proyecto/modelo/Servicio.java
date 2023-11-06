@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import java.sql.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,16 +21,17 @@ public class Servicio {
     private String horario;
     private Integer capacidad;
     private double costo;
-    private String menu;
 
-    public Servicio(String nombreServicio, String descripcion, String horario, Integer capacidad, double costo, String menu){
+
+
+    public Servicio(String nombreServicio, String descripcion, String horario, Integer capacidad, double costo){
         
         this.nombreServicio=nombreServicio;
         this.descripcion=descripcion;
         this.horario=horario;
         this.capacidad=capacidad;
         this.costo=costo;
-        this.menu=menu;
+
     }
     
     public Servicio(){;}
@@ -79,14 +82,6 @@ public class Servicio {
 
     public void setCosto(double costo) {
         this.costo = costo;
-    }
-
-    public String getMenu() {
-        return menu;
-    }
-
-    public void setMenu(String menu) {
-        this.menu = menu;
     }
 
     

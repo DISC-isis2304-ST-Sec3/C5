@@ -18,20 +18,20 @@ public interface ConsumoRepository extends JpaRepository<Consumo, Integer>{
     Collection<Consumo> darConsumos();
 
     @Query(value = "SELECT * FROM consumos WHERE idConsumo= :idConsumo", nativeQuery = true)
-    Consumo darConsumo(@Param("idConsumo") int idConsumo);
+    Consumo darConsumo(@Param("idConsumo") Integer idConsumo);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO consumos (idConsumo, descripcion, fecha, costo, Servicios_idServicio, Reservas_idReserva) VALUES ( hotelAndes_sequence.nextval , :descripcion, :fecha, :costo, :Servicios_idServicio, :Reservas_idReserva)", nativeQuery = true)
-    void insertarConsumos(@Param("descripcion") String descripcion, @Param("fecha") Date fecha, @Param("costo") double costo, @Param("Servicios_idServicio") Integer Servicios_idServicio, @Param("Reservas_idReserva") Integer Reservas_idReserva);
+    @Query(value = "INSERT INTO consumos (idConsumo, descripcion, fecha, costo, Servicios_idServicio) VALUES ( hotelAndes_sequence.nextval , :descripcion, :fecha, :costo, :Servicios_idServicio)", nativeQuery = true)
+    void insertarConsumos(@Param("descripcion") String descripcion, @Param("fecha") Date fecha, @Param("costo") double costo, @Param("Servicios_idServicio") Integer Servicios_idServicio);
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE consumos SET descripcion = :descripcion, fecha = :fecha, costo = :costo, Servicios_idServicio = :Servicios_idServicio, Reservas_idReserva = :Reservas_idReserva WHERE idConsumo = :idConsumo", nativeQuery = true)
-    void actualizarConsumos(@Param("idConsumo") int idConsumo, @Param("descripcion") String descripcion, @Param("fecha") Date fecha, @Param("costo") double costo, @Param("Servicios_idServicio") Integer Servicios_idServicio, @Param("Reservas_idReserva") Integer Reservas_idReserva);
+    @Query(value = "UPDATE consumos SET descripcion = :descripcion, fecha = :fecha, costo = :costo, Servicios_idServicio = :Servicios_idServicio WHERE idConsumo = :idConsumo", nativeQuery = true)
+    void actualizarConsumos(@Param("idConsumo") Integer idConsumo, @Param("descripcion") String descripcion, @Param("fecha") Date fecha, @Param("costo") double costo, @Param("Servicios_idServicio") Integer Servicios_idServicio);
    
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM consumos WHERE idConsumo = :idConsumo", nativeQuery = true)
-    void eliminarConsumo(@Param("idConsumo") int idConsumo);
+    void eliminarConsumo(@Param("idConsumo") Integer idConsumo);
 }

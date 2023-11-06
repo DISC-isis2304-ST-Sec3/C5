@@ -20,7 +20,7 @@ public class TipoHController {
 
     @GetMapping("/tiposH")
     public String tipoH(Model model){
-        model.addAttribute("tiposH", tipoHRepository.darTiposH());
+        model.addAttribute("tipoH", tipoHRepository.darTiposH());
         return "tiposH";
     }
     @GetMapping("/tiposH/new")
@@ -30,12 +30,12 @@ public class TipoHController {
     }
     @PostMapping("/tiposH/new/save")
     public String tipoHGuardar(@ModelAttribute TipoH tipoH){
-        tipoHRepository.insertarTiposH(tipoH.getDotacion(), tipoH.getCapacidad(),tipoH.getCostoNoche());
+        tipoHRepository.insertarTiposH(tipoH.getDotacion(), tipoH.getCapacidad(),tipoH.getCostoPorNoche());
         return "redirect:/tiposH";
     }
-    @GetMapping("/tiposH/{nombreTipo}/edit")
-    public String tipoHEditerForm(@PathVariable("nombreTipo") String nombreTipo, Model model){
-        TipoH tipoH = tipoHRepository.darTipoH((nombreTipo));
+    @GetMapping("/tiposH/{nombreTH}/edit")
+    public String tipoHEditerForm(@PathVariable("nombreTH") String nombreTH, Model model){
+        TipoH tipoH = tipoHRepository.darTipoH((nombreTH));
         if(tipoH != null){
             model.addAttribute("tipoH", tipoH);
             return "tipoHEditar";
@@ -43,14 +43,14 @@ public class TipoHController {
             return "redirect:/tiposH";
         }
     }
-    @PostMapping("/tiposH/{nombreTipo}/edit/save")
-    public String tipoHEditarGuardar(@PathVariable("nombreTipo") String nombreTipo, @ModelAttribute TipoH tipoH){
-        tipoHRepository.actualizarTiposH(nombreTipo, tipoH.getDotacion(), tipoH.getCapacidad(), tipoH.getCostoNoche());
+    @PostMapping("/tiposH/{nombreTH}/edit/save")
+    public String tipoHEditarGuardar(@PathVariable("nombreTH") String nombreTH, @ModelAttribute TipoH tipoH){
+        tipoHRepository.actualizarTiposH(nombreTH, tipoH.getDotacion(), tipoH.getCapacidad(), tipoH.getCostoPorNoche());
         return "redirect:/tiposH";
     }
-    @GetMapping("/tiposH/{nombreTipo}/edit/delete")
-    public String tipoHEliminar(@PathVariable("nombreTipo") String nombreTipo){
-        tipoHRepository.eliminarTipoH(nombreTipo);
+    @GetMapping("/tiposH/{nombreTH}/edit/delete")
+    public String tipoHEliminar(@PathVariable("nombreTH") String nombreTH){
+        tipoHRepository.eliminarTipoH(nombreTH);
         return "redirect:/tiposH";
     }
     

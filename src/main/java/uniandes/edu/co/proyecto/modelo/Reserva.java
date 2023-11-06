@@ -7,7 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,31 +20,27 @@ public class Reserva {
     private Date fechaEntrada;
     private Date fechaSalida;
     private Integer cantidadPersonas;
-    private Date fechaCheckIn;
-    private Date fechaCheckOut;
 
-    @OneToOne
-    @JoinColumn(name = "Usuario_cedula", referencedColumnName = "cedula")
-    private Usuario Usuario_cedula;
+    @ManyToOne
+    @JoinColumn(name = "Usuario_idUser", referencedColumnName = "idUser")
+    private Usuario Usuario_idUser;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "Planes_nombrePlan", referencedColumnName = "nombrePlan")
     private Plan Planes_nombrePlan;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "Habitaciones_numero",referencedColumnName = "numero")
     private Habitacion Habitaciones_numero;
 
-    public Reserva(Date fechaEntrada, Date fechaSalida, Integer cantidadPersonas, Usuario Usuario_cedula, Plan Planes_nombrePlan, Habitacion Habitaciones_numero, Date fechaCheckIn, Date fechaCheckOut){
+    public Reserva(Date fechaEntrada, Date fechaSalida, Integer cantidadPersonas, Usuario Usuario_idUser, Plan Planes_nombrePlan, Habitacion Habitaciones_numero){
 
         this.fechaEntrada=fechaEntrada;
         this.fechaSalida=fechaSalida;
         this.cantidadPersonas=cantidadPersonas;
-        this.Usuario_cedula=Usuario_cedula;
+        this.Usuario_idUser=Usuario_idUser;
         this.Habitaciones_numero=Habitaciones_numero;
         this.Planes_nombrePlan=Planes_nombrePlan;
-        this.fechaCheckIn=fechaCheckIn;
-        this.fechaCheckOut=fechaCheckOut;
     }
     public Reserva(){;}
     public Integer getIdReserva() {
@@ -71,11 +67,11 @@ public class Reserva {
     public void setCantidadPersonas(Integer cantidadPersonas) {
         this.cantidadPersonas = cantidadPersonas;
     }
-    public Usuario getUsuario_cedula() {
-        return Usuario_cedula;
+    public Usuario getUsuario_idUser() {
+        return Usuario_idUser;
     }
-    public void setUsuario_cedula(Usuario usuario_cedula) {
-        Usuario_cedula = usuario_cedula;
+    public void setUsuario_idUser(Usuario usuario_idUser) {
+        Usuario_idUser = usuario_idUser;
     }
     public Plan getPlanes_nombrePlan() {
         return Planes_nombrePlan;
@@ -89,18 +85,8 @@ public class Reserva {
     public void setHabitaciones_numero(Habitacion habitaciones_numero) {
         Habitaciones_numero = habitaciones_numero;
     }
-    public Date getFechaCheckIn() {
-        return fechaCheckIn;
-    }
-    public void setFechaCheckIn(Date fechaCheckIn) {
-        this.fechaCheckIn = fechaCheckIn;
-    }
-    public Date getFechaCheckOut() {
-        return fechaCheckOut;
-    }
-    public void setFechaCheckOut(Date fechaCheckOut) {
-        this.fechaCheckOut = fechaCheckOut;
-    }
+
+    
     
     
 }

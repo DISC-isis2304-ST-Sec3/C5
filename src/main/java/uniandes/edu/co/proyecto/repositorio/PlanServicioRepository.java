@@ -23,12 +23,12 @@ public interface PlanServicioRepository extends JpaRepository<PlanServicio,Integ
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO planesServicios (Servicio_idServicio, Planes_nombrePlan) VALUES (:Servicio_idServicio, :Planes_nombrePlan)", nativeQuery = true)
-    void insertarFrecuentan(@Param("Servicio_idServicio") Integer Servicio_idServicio, @Param("Planes_nombrePlan") String Planes_nombrePlan);
+    void insertarPlanServicio(@Param("Servicio_idServicio") Integer Servicio_idServicio, @Param("Planes_nombrePlan") String Planes_nombrePlan);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE planesServicios SET Servicio_idServicio = :Servicio_idServicio_actualizado, Planes_nombrePlan = :Planes_nombrePlan_actualizado WHERE Servicio_idServicio = :Servicio_idServicio AND Planes_nombrePlan = :Planes_nombrePlan", nativeQuery = true)
-    void actualizarFrecuentan(@Param("Servicio_idServicio") Integer Servicio_idServicio, @Param("Planes_nombrePlan") String Planes_nombrePlan, @Param("Servicio_idServicio_actualizado") Integer Servicio_idServicio_actualizado, @Param("Planes_nombrePlan_actualizado") String Planes_nombrePlan_actualizado);
+    void actualizarPlanServicio(@Param("Servicio_idServicio") Integer Servicio_idServicio, @Param("Planes_nombrePlan") String Planes_nombrePlan, @Param("Servicio_idServicio_actualizado") Integer Servicio_idServicio_actualizado, @Param("Planes_nombrePlan_actualizado") String Planes_nombrePlan_actualizado);
 
     @Modifying
     @Transactional

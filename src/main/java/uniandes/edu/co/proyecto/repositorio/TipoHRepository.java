@@ -17,22 +17,22 @@ public interface TipoHRepository extends JpaRepository<TipoH,String>{
     @Query(value = "SELECT * FROM tiposH", nativeQuery = true)
     Collection<TipoH> darTiposH();
 
-    @Query(value = "SELECT * FROM tiposH WHERE nombreTipo= :nombreTipo", nativeQuery = true)
-    TipoH darTipoH(@Param("nombreTipo") String nombreTipo);
+    @Query(value = "SELECT * FROM tiposH WHERE nombreTH= :nombreTH", nativeQuery = true)
+    TipoH darTipoH(@Param("nombreTH") String nombreTipo);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO tiposH (nombreTipo, dotacion, capacidad, costoNoche) VALUES ( hotelAndes_sequence.nextval , :dotacion, :capacidad, :costoNoche)", nativeQuery = true)
-    void insertarTiposH(@Param("dotacion") String dotacion, @Param("capacidad") int capacidad, @Param("costoNoche") double costoNoche);
+    @Query(value = "INSERT INTO tiposH (nombreTH, dotacion, capacidad, costoPorNoche) VALUES ( hotelAndes_sequence.nextval , :dotacion, :capacidad, :costoPorNoche)", nativeQuery = true)
+    void insertarTiposH(@Param("dotacion") String dotacion, @Param("capacidad") Integer capacidad, @Param("costoPorNoche") double costoPorNoche);
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE tiposH SET dotacion = :dotacion, capacidad = :capacidad, costoNoche = :costoNoche WHERE nombreTipo = :nombreTipo", nativeQuery = true)
-    void actualizarTiposH(@Param("nombreTipo") String nombrePlan, @Param("dotacion") String dotacion, @Param("capacidad") int capacidad, @Param("costoNoche") double costoNoche);
+    @Query(value = "UPDATE tiposH SET dotacion = :dotacion, capacidad = :capacidad, costoPorNoche = :costoPorNoche WHERE nombreTH = :nombreTH", nativeQuery = true)
+    void actualizarTiposH(@Param("nombreTH") String nombreTH, @Param("dotacion") String dotacion, @Param("capacidad") Integer capacidad, @Param("costoPorNoche") double costoPorNoche);
     
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM tiposH WHERE nombreTipo = :nombreTipo", nativeQuery = true)
-    void eliminarTipoH(@Param("nombreTipo") String nombreTipo);
+    @Query(value = "DELETE FROM tiposH WHERE nombreTH = :nombreTH", nativeQuery = true)
+    void eliminarTipoH(@Param("nombreTH") String nombreTH);
     
 }

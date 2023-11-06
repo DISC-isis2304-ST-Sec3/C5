@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fragmento</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+
+<body>
+
+    </br>
+    <div th:fragment="tipoHForm(titulo)" class="container border border-2 w-25">
+        <h1 class="text-center" th:text="${titulo}"></h1>
+    
+    <form>
+        <label class="col-form-label">Nombre:</label>
+        <select class="form-control" id="nombreTH" name="nombreTH" required>
+            <option value="SuitePresidencial" th:selected="${tipoH.nombreTH eq 'SuitePresidencial'}">SuitePresidencial</option>
+            <option value="Suite" th:selected="${tipoH.nombreTH eq 'Suite'}">Suite</option>
+            <option value="Familiar" th:selected="${tipoH.nombreTH eq 'Familiar'}">Familiar</option>
+            <option value="Doble" th:selected="${tipoH.nombreTH eq 'Doble'}">Doble</option>
+            <option value="Sencilla" th:selected="${tipoH.tiponombreTHUser eq 'Sencilla'}">Sencilla</option>
+        </select>
+        <label class="col-form-label">Dotacion:</label>
+        <input class="form-control" type="text" id="dotacion" name="dotacion" required th:value="${tipoH.dotacion}" />
+        <label for="capacidad" class="col-form-label">Capacidad:</label>
+        <input class="form-control" type="number" id="capacidad" name="capacidad" required th:value="${tipoH.capacidad}" />
+        <label for="costoPorNoche" class="col-form-label">Costo por noche:</label>
+        <input class="form-control" type="number" id="costoPorNoche" name="costoPorNoche" required th:value=${tipoH.costoPorNoche}><br>
+
+        <div class="text-center">
+            <input type="submit" value="Guardar" class="btn btn-primary">
+            <a th:href="@{/tiposH}" class="btn btn-primary">Cancelar</a>
+        </div>
+    </form>
+
+    </br>
+</div>
+
+</body>
+
+</html>

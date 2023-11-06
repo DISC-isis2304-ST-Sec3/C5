@@ -7,33 +7,32 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.transaction.Transactional;
+import uniandes.edu.co.proyecto.modelo.Reserva;
 import uniandes.edu.co.proyecto.modelo.ReservaServicio;
 
-public interface ReservaServicioRepository extends JpaRepository<ReservaServicio,Integer>{
-
-    
+public interface ReservaServicioRepository extends JpaRepository<ReservaServicio, Integer>{
+   
     @Query(value = "SELECT * FROM reservasServicios", nativeQuery = true)
-    Collection<ReservaServicio> darReservasServicio();
+    Collection<Reserva> darReservasServicios();
 
-    @Query(value = "SELECT * FROM reservasServicios WHERE Servicio_idServicio = :Servicio_idServicio AND Usuarios_idUsuario = :Usuarios_idUsuario AND fechaReservaServicio = :fechaReservaServicio", nativeQuery = true)
-    ReservaServicio darReservaServicio(@Param("Servicio_idServicio") Integer Servicio_idServicio, @Param("Usuarios_idUsuario") Integer Usuarios_idUsuario, @Param("fechaReservaServicio") Date fechaReservaServicio);
+    @Query(value = "SELECT * FROM reservasServicios WHERE idReservaServicio= :idReservaServicio", nativeQuery = true)
+    ReservaServicio darReservaServicio(@Param("idReservaServicio") Integer idReservaServicio);
+
+    @Modifying
+    @Transactional
+    @Query(value = "INSERT INTO reservasServicios (idReservaServicio, fecha, duracion, Servicios_idServicio, Reserva_idReserva, Empleado_idEmpleado) VALUES ( hotelAndes_sequence.nextval , :fecha, :duracion, :Servicios_idServicio, :Reserva_idReserva, :Empleado_idEmpleado)", nativeQuery = true)
+    void insertarReservasServicio(@Param("fecha") Date fecha, @Param("duracion") Integer duracion, @Param("Servicios_idServicio") Integer Servicios_idServicio, @Param("Reserva_idReserva") Integer Reserva_idReserva, @Param("Empleado_idEmpleado") Integer Empleado_idEmpleado);
     
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO reservasServicios (Servicio_idServicio, Usuarios_idUsuario, fechaReservaServicio) VALUES (:Servicio_idServicio, :Usuarios_idUsuario, :fechaReservaServicio)", nativeQuery = true)
-    void insertarFrecuentan(@Param("Servicio_idServicio") Integer Servicio_idServicio, @Param("Usuarios_idUsuario") Integer Usuarios_idUsuario, @Param("fechaReservaServicio") Date fechaReservaServicio);
-
+    @Query(value = "UPDATE reservasServicios SET fecha = :fecha, duracion = :duracion, Servicios_idServicio = :Servicios_idServicio, Reserva_idReserva = :Reserva_idReserva, Empleado_idEmpleado = :Empleado_idEmpleado WHERE idReservaServicio = :idReservaServicio", nativeQuery = true)
+    void actualizarReservasServicio(@Param("idReservaServicio") Integer idReservaServicio, @Param("fecha") Date fecha, @Param("duracion") Integer duracion, @Param("Servicios_idServicio") Integer Servicios_idServicio, @Param("Reserva_idReserva") Integer Reserva_idReserva, @Param("Empleado_idEmpleado") Integer Empleado_idEmpleado);
+    
     @Modifying
     @Transactional
-    @Query(value = "UPDATE reservasServicios SET Servicio_idServicio = :Servicio_idServicio_actualizado, Usuarios_idUsuario = :Usuarios_idUsuario_actualizado, fechaReservaServicio = :fechaReservaServicio_actualizado WHERE Servicio_idServicio = :Servicio_idServicio AND Usuarios_idUsuario = :Usuarios_idUsuario AND fechaReservaServicio = :fechaReservaServicio", nativeQuery = true)
-    void actualizarFrecuentan(@Param("Servicio_idServicio") Integer Servicio_idServicio, @Param("Usuarios_idUsuario") Integer Usuarios_idUsuario, @Param("fechaReservaServicio") Date fechaReservaServicio, @Param("Servicio_idServicio_actualizado") Integer Servicio_idServicio_actualizado, @Param("Usuarios_idUsuario_actualizado") Integer Usuarios_idUsuario_actualizado, @Param("fechaReservaServicio_actualizado") Date fechaReservaServicio_actualizado);
-
-    @Modifying
-    @Transactional
-    @Query(value = "DELETE FROM reservasServicios WHERE Servicio_idServicio = :Servicio_idServicio AND Usuarios_idUsuario = :Usuarios_idUsuario", nativeQuery = true)
-    void eliminarReservaServicio(@Param("Servicio_idServicio") Integer Servicio_idServicio, @Param("Usuarios_idUsuario") Integer Usuarios_idUsuario);
-
+    @Query(value = "DELETE FROM reservasServicios WHERE idReservaServicio = :idReservaServicio", nativeQuery = true)
+    void eliminarReservaServicio(@Param("idReservaServicio") Integer idReservaServicio);
     
 }

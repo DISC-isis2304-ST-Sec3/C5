@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fragmento</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+
+<body>
+
+    </br>
+    <div th:fragment="usuarioForm(titulo)" class="container border border-2 w-25">
+        <h1 class="text-center" th:text="${titulo}"></h1>
+    
+    <form>
+        <label class="col-form-label">Tipo Documento:</label>
+        <input class="form-control" type="text" id="tipoDocumento" name="tipoDocumento" required th:value="${usuario.tipoDocumento}" />
+        <label class="col-form-label">Nombre:</label>
+        <input class="form-control" type="text" id="nombreUsuario" name="nombreUsuario" required th:value="${usuario.nombreUsuario}" />
+        <label class="col-form-label">Correo:</label>
+        <input class="form-control" type="text" id="correo" name="correo" required th:value=${usuario.correo}><br>
+        <label class="col-form-label" for="tipoUsuario">Tipo usuario:</label>
+        <select class="form-control" id="tipoUsuario" name="tipoUsuario" required>
+            <th:block th:each="tipoUsuario : ${tiposUsuarios}" >
+                <option th:value="${TiposUsuarios_tipoUser.tipoUser}" th:text="${TiposUsuarios_tipoUser.tipoUser}" th:selected="${usuario!=null || usuario.TiposUsuarios_tipoUser.tipoUser == TiposUsuarios_tipoUser.tipoUser}"></option>
+            </th:block>
+       
+        
+        <div class="text-center">
+            <input type="submit" value="Guardar" class="btn btn-primary">
+            <a th:href="@{/usuarios}" class="btn btn-primary">Cancelar</a>
+        </div>
+    </form>
+
+    </br>
+</div>
+
+</body>
+
+</html>

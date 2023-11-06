@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 import uniandes.edu.co.proyecto.modelo.Reserva;
-import uniandes.edu.co.proyecto.repositorio.ReservasRepository;
+import uniandes.edu.co.proyecto.repositorio.ReservaRepository;
 
 @Controller
-public class ReservaRepository {
+public class ReservaController {
 
     @Autowired
-    private ReservasRepository reservasRepository;
+    private ReservaRepository reservasRepository;
 
     @GetMapping("/reservas")
     public String reservas(Model model){
@@ -25,12 +25,12 @@ public class ReservaRepository {
     }
     @GetMapping("/reservas/new")
     public String reservaForm(Model model){
-        model.addAttribute("tipoH", new Reserva());
+        model.addAttribute("reserva", new Reserva());
         return "reservaNuevo";
     }
     @PostMapping("/reservas/new/save")
     public String reservaGuardar(@ModelAttribute Reserva reserva){
-        reservasRepository.insertarReservas(reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCantidadPersonas(), reserva.getUsuario_cedula().getCedula(), reserva.getPlanes_nombrePlan().getNombrePlan(), reserva.getHabitaciones_numero().getNumero(), reserva.getFechaCheckIn(), reserva.getFechaCheckOut());
+        reservasRepository.insertarReservas(reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCantidadPersonas(), reserva.getUsuario_idUser().getidUser(), reserva.getPlanes_nombrePlan().getNombrePlan(), reserva.getHabitaciones_numero().getNumero());
         return "redirect:/reservas";
     }
     @GetMapping("/reservas/{idReserva}/edit")
@@ -45,8 +45,8 @@ public class ReservaRepository {
     }
     @PostMapping("/reservas/{idReserva}/edit/save")
     public String reservaEditarGuardar(@PathVariable("idReserva") int idReserva, @ModelAttribute Reserva reserva){
-        reservasRepository.actualizarReservas(idReserva, reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCantidadPersonas(), reserva.getUsuario_cedula().getCedula(), reserva.getPlanes_nombrePlan().getNombrePlan(), reserva.getHabitaciones_numero().getNumero(), reserva.getFechaCheckIn(), reserva.getFechaCheckOut());
-        return "redirect:/habitreservasaciones";
+        reservasRepository.actualizarReservas(idReserva, reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCantidadPersonas(), reserva.getUsuario_idUser().getidUser(), reserva.getPlanes_nombrePlan().getNombrePlan(), reserva.getHabitaciones_numero().getNumero());
+        return "redirect:/reservas";
     }
     @GetMapping("/reservas/{idReserva}/edit/delete")
     public String reservaEliminar(@PathVariable("idReserva") int idReserva){

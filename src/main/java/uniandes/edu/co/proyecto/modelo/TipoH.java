@@ -13,27 +13,27 @@ public class TipoH {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private String nombreTipo;
+    private String nombreTH;
     private String dotacion;
     private Integer capacidad;
-    private double costoNoche;
+    private double costoPorNoche;
 
-    public TipoH(String dotacion, Integer capacidad, double costoNoche){
+    public TipoH(String dotacion, Integer capacidad, double costoPorNoche){
 
         this.dotacion = dotacion;
         this.capacidad = capacidad;
-        this.costoNoche = costoNoche;
+        this.costoPorNoche = costoPorNoche;
 
     }
 
     public TipoH(){;}
 
     public String getNombreTipo() {
-        return nombreTipo;
+        return nombreTH;
     }
 
     public void setNombreTipo(String nombreTipo) {
-        this.nombreTipo = nombreTipo;
+        this.nombreTH = nombreTipo;
     }
 
     public String getDotacion() {
@@ -52,12 +52,12 @@ public class TipoH {
         this.capacidad = capacidad;
     }
 
-    public double getCostoNoche() {
-        return costoNoche;
+    public double getCostoPorNoche() {
+        return costoPorNoche;
     }
 
-    public void setCostoNoche(double costoNoche) {
-        this.costoNoche = costoNoche;
+    public void setCostoPorNoche(double costoPorNoche) {
+        this.costoPorNoche = costoPorNoche;
     }
 
     

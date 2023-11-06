@@ -21,17 +21,17 @@ public class ConsumoController {
 
     @GetMapping("/consumos")
     public String consumo(Model model){
-        model.addAttribute("checks", consumoRepository.darConsumos());
+        model.addAttribute("consumos", consumoRepository.darConsumos());
         return "consumos";
     }
     @GetMapping("/consumos/new")
     public String consumoForm(Model model){
-        model.addAttribute("consumos", new Consumo());
+        model.addAttribute("consumo", new Consumo());
         return "consumoNuevo";
     }
     @PostMapping("/consumos/new/save")
     public String consumoGuardar(@ModelAttribute Consumo consumo){
-        consumoRepository.insertarConsumos(consumo.getDescripcion(), consumo.getFecha(), consumo.getCosto(), consumo.getServicios_idServicio().getIdServicio(), consumo.getReserva_idReserva().getIdReserva());
+        consumoRepository.insertarConsumos(consumo.getDescripcion(), consumo.getFecha(), consumo.getCosto(), consumo.getServicios_idServicio().getIdServicio());
         return "redirect:/consumos";
     }
     @GetMapping("/consumos/{idConsumo}/edit")
@@ -46,12 +46,12 @@ public class ConsumoController {
     }
     @PostMapping("/consumos/{idConsumo}/edit/save")
     public String consumoEditarGuardar(@PathVariable("idConsumo") int idConsumo, @ModelAttribute Consumo consumo){
-        consumoRepository.actualizarConsumos(idConsumo, consumo.getDescripcion(), consumo.getFecha(), consumo.getCosto(), consumo.getServicios_idServicio().getIdServicio(), consumo.getReserva_idReserva().getIdReserva());
+        consumoRepository.actualizarConsumos(idConsumo, consumo.getDescripcion(), consumo.getFecha(), consumo.getCosto(), consumo.getServicios_idServicio().getIdServicio());
         return "redirect:/consumos";
     }
     @GetMapping("/consumos/{idConsumo}/edit/delete")
     public String consumoEliminar(@PathVariable("idConsumo") int idConsumo){
-        consumoRepository.eliminarConsumo(idConsumo);;
+        consumoRepository.eliminarConsumo(idConsumo);
         return "redirect:/consumos";
     }
 }

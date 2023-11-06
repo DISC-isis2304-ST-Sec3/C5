@@ -12,20 +12,20 @@
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
-                    <th>id</th>
-                    <th>TipoHabitacion</th>
+                    <th>Numero</th>
+                    <th>Tipo Habitacion</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <th:block th:each="habitacion : ${habitaciones}">
                 <tr>
-                    <td th:text="${habitacion.id}"></td>
-                    <td th:text="${habitacion.tipoHabitacion}"></td>
+                    <td th:text="${habitacion.numero}"></td>
+                    <td th:text="${habitacion.TipoH_nombreTipo.nombreTH}"></td>
                     <td>
-                        <a th:href="@{habitaciones/{id}/edit(id=${habitacion.id})}" >
+                        <a th:href="@{habitaciones/{numero}/edit(numero=${habitacion.numero})}" >
                             Editar
                         </a>
-                        <a th:href="@{habitaciones/{id}/delete(id=${habitacion.id})}" 
+                        <a th:href="@{habitaciones/{numero}/delete(numero=${habitacion.numero})}" 
                         onclick="return confirm('¿Está seguro de eliminar la habitacion?')">
                             Borrar
                         </a>
@@ -34,6 +34,7 @@
             </th:block> 
         </table>
         <div>
+            <a th:href='@{habitaciones/new}' class="btn btn-primary">Añadir Habitacion</a>
             <a th:href="@{/}" class="btn btn-primary">Volver Atrás</a>
 
     </div>

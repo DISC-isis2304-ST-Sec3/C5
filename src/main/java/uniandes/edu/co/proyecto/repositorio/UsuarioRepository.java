@@ -15,21 +15,21 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
     @Query(value = "SELECT * FROM usuarios", nativeQuery = true)
     Collection<Usuario> darUsuarios();
 
-    @Query(value = "SELECT * FROM usuarios WHERE cedula= :cedula", nativeQuery = true)
-    Usuario darUsuario(@Param("cedula") int cedula);
+    @Query(value = "SELECT * FROM usuarios WHERE idUser= :idUser", nativeQuery = true)
+    Usuario darUsuario(@Param("idUser") Integer idUser);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO usuarios (cedula, tipoDocumento, nombreUsuario, correo, TiposUsuarios_nombre) VALUES ( hotelAndes_sequence.nextval , :tipoDocumento, :nombreUsuario, :correo, :TiposUsuarios_nombre)", nativeQuery = true)
-    void insertarUsuarios(@Param("tipoDocumento") String tipoDocumento, @Param("nombreUsuario") String nombreUsuario, @Param("correo") String correo, @Param("TiposUsuarios_nombre") String TiposUsuarios_nombre);
+    @Query(value = "INSERT INTO usuarios (idUser, tipoDocumento, nombreUsuario, correo, TiposUsuarios_tipoUser) VALUES ( hotelAndes_sequence.nextval , :tipoDocumento, :nombreUsuario, :correo, :TiposUsuarios_tipoUser)", nativeQuery = true)
+    void insertarUsuario(@Param("tipoDocumento") String tipoDocumento, @Param("nombreUsuario") String nombreUsuario, @Param("correo") String correo, @Param("TiposUsuarios_tipoUser") String TiposUsuarios_tipoUser);
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE usuarios SET tipoDocumento = :tipoDocumento, nombreUsuario = :nombreUsuario, correo = :correo, TiposUsuarios_nombre = :TiposUsuarios_nombre WHERE cedula = :cedula", nativeQuery = true)
-    void actualizarUsuarios(@Param("cedula") int cedula, @Param("tipoDocumento") String tipoDocumento, @Param("nombreUsuario") String nombreUsuario, @Param("correo") String correo, @Param("TiposUsuarios_nombre") String TiposUsuarios_nombre);
+    @Query(value = "UPDATE usuarios SET tipoDocumento = :tipoDocumento, nombreUsuario = :nombreUsuario, correo = :correo, TiposUsuarios_tipoUser = :TiposUsuarios_tipoUser WHERE idUser = :idUser", nativeQuery = true)
+    void actualizarUsuario(@Param("idUser") Integer idUser, @Param("tipoDocumento") String tipoDocumento, @Param("nombreUsuario") String nombreUsuario, @Param("correo") String correo, @Param("TiposUsuarios_tipoUser") String TiposUsuarios_tipoUser);
     
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM usuarios WHERE cedula = :cedula", nativeQuery = true)
-    void eliminarUsuario(@Param("cedula") int cedula);
+    @Query(value = "DELETE FROM usuarios WHERE idUser = :idUser", nativeQuery = true)
+    void eliminarUsuario(@Param("idUser") Integer idUser);
 }

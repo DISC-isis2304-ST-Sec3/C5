@@ -31,27 +31,28 @@ public class UsuarioController {
     }
     @PostMapping("/usuarios/new/save")
     public String usuarioGuardar(@ModelAttribute Usuario usuario){
-        usuarioRepository.insertarUsuarios(usuario.getTipoDocumento(), usuario.getNombreUsuario(), usuario.getCorreo(), usuario.getTipoUsuario().getNombre());
+        usuarioRepository.insertarUsuario(usuario.getTipoDocumento(), usuario.getNombreUsuario(), usuario.getCorreo(), usuario.getTipoUsuario().getTipoUser());;
         return "redirect:/usuarios";
     }
-    @GetMapping("/usuarios/{cedula}/edit")
-    public String usuarioEditerForm(@PathVariable("cedula") int cedula, Model model){
-        Usuario usuario = usuarioRepository.darUsuario(cedula);
+    @GetMapping("/usuarios/{idUser}/edit")
+    public String usuarioEditerForm(@PathVariable("idUser") int idUser, Model model){
+        Usuario usuario = usuarioRepository.darUsuario(idUser);
         if(usuario != null){
-            model.addAttribute("servicio", usuario);
+            model.addAttribute("usuario", usuario);
             return "usuarioEditar";
         } else {
             return "redirect:/usuarios";
         }
     }
-    @PostMapping("/usuarios/{cedula}/edit/save")
-    public String servicioEditarGuardar(@PathVariable("cedula") int cedula, @ModelAttribute Usuario usuario){
-        usuarioRepository.actualizarUsuarios(cedula, usuario.getTipoDocumento(), usuario.getNombreUsuario(), usuario.getCorreo(), usuario.getTipoUsuario().getNombre());;
+    @PostMapping("/usuarios/{idUser}/edit/save")
+    public String servicioEditarGuardar(@PathVariable("idUser") int idUser, @ModelAttribute Usuario usuario){
+        usuarioRepository.actualizarUsuario(idUser, usuario.getTipoDocumento(), usuario.getNombreUsuario(), usuario.getCorreo(), usuario.getTipoUsuario().getTipoUser());
         return "redirect:/usuarios";
     }
-    @GetMapping("/usuarios/{cedula}/edit/delete")
-    public String servicioEliminar(@PathVariable("cedula") int cedula){
-        usuarioRepository.eliminarUsuario(cedula);;
+    
+    @GetMapping("/usuarios/{idUser}/delere")
+    public String usuarioEliminar(@PathVariable ("idUser") int idUser){
+        usuarioRepository.eliminarUsuario(idUser);
         return "redirect:/usuarios";
     }
 }

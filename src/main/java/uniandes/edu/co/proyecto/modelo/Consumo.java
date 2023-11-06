@@ -26,16 +26,13 @@ public class Consumo {
     @JoinColumn(name = "Servicios_idServicio", referencedColumnName = "idServicio")
     private Servicio Servicios_idServicio;
 
-    @ManyToOne
-    @JoinColumn(name = "Reserva_idReserva",referencedColumnName = "idReserva")
-    private Reserva Reserva_idReserva;
+    
 
-    public Consumo(String descripcion, Date fecha, double costo, Servicio Servicios_idServicio, Reserva Reserva_idReserva){
+    public Consumo(String descripcion, Date fecha, double costo, Servicio Servicios_idServicio){
         this.descripcion=descripcion;
         this.fecha=fecha;
         this.costo=costo;
         this.Servicios_idServicio=Servicios_idServicio;
-        this.Reserva_idReserva=Reserva_idReserva;
     }
 
     public Consumo(){;}
@@ -80,13 +77,6 @@ public class Consumo {
         Servicios_idServicio = servicios_idServicio;
     }
 
-    public Reserva getReserva_idReserva() {
-        return Reserva_idReserva;
-    }
-
-    public void setReserva_idReserva(Reserva reserva_idReserva) {
-        Reserva_idReserva = reserva_idReserva;
-    }
 
     
     

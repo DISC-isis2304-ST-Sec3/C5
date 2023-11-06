@@ -19,20 +19,20 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer>{
     Collection<Servicio> darServicios();
 
     @Query(value = "SELECT * FROM servicios WHERE idServicio= :idServicio", nativeQuery = true)
-    Servicio darServicio(@Param("idServicio") int idServicio);
+    Servicio darServicio(@Param("idServicio") Integer idServicio);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO servicios (idServicio, nombreServicio, descripcion, horario, capacidad, costo, menu) VALUES ( hotelAndes_sequence.nextval , :nombreServicio, :descripcion, :horario, :capacidad, :costo, :menu)", nativeQuery = true)
-    void insertarServicios(@Param("nombreServicio") String nombreServicio, @Param("descripcion") String descripcion, @Param("horario") String horario, @Param("capacidad") int capacidad, @Param("costo") double costo, @Param("menu") String menu);
+    @Query(value = "INSERT INTO servicios (idServicio, nombreServicio, descripcion, horario, capacidad, costo) VALUES ( hotelAndes_sequence.nextval , :nombreServicio, :descripcion, :horario, :capacidad, :costo)", nativeQuery = true)
+    void insertarServicios(@Param("nombreServicio") String nombreServicio, @Param("descripcion") String descripcion, @Param("horario") String horario, @Param("capacidad") Integer capacidad, @Param("costo") double costo);
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE servicios SET nombreServicio = :nombreServicio, descripcion = :descripcion, horario = :horario, capacidad = :capacidad, costo = :costo, menu = :menu WHERE idServicio = :idServicio", nativeQuery = true)
-    void actualizarServicios(@Param("idServicio") int idServicio, @Param("nombreServicio") String nombreServicio, @Param("descripcion") String descripcion, @Param("horario") String horario, @Param("capacidad") int capacidad, @Param("costo") double costo, @Param("menu") String menu);
+    @Query(value = "UPDATE servicios SET nombreServicio = :nombreServicio, descripcion = :descripcion, horario = :horario, capacidad = :capacidad, costo = :costo WHERE idServicio = :idServicio", nativeQuery = true)
+    void actualizarServicios(@Param("idServicio") Integer idServicio, @Param("nombreServicio") String nombreServicio, @Param("descripcion") String descripcion, @Param("horario") String horario, @Param("capacidad") Integer capacidad, @Param("costo") double costo);
     
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM servicios WHERE idServicio = :idServicio", nativeQuery = true)
-    void eliminarServicio(@Param("idServicio") int idServicio);
+    void eliminarServicio(@Param("idServicio") Integer idServicio);
 }

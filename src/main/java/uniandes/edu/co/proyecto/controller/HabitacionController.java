@@ -24,7 +24,7 @@ public class HabitacionController {
     }
     @GetMapping("/habitaciones/new")
     public String habitacionForm(Model model){
-        model.addAttribute("tipoH", new Habitacion());
+        model.addAttribute("habitacion", new Habitacion());
         return "habitacionNuevo";
     }
     @PostMapping("/habitaciones/new/save")
@@ -44,7 +44,7 @@ public class HabitacionController {
     }
     @PostMapping("/habitaciones/{numero}/edit/save")
     public String habitacionEditarGuardar(@PathVariable("numero") int numero, @ModelAttribute Habitacion habitacion){
-        habitacionRepository.actualizarHabitaciones(habitacion.getNumero(), habitacion.getTipoH_nombreTipo().getNombreTipo());;
+        habitacionRepository.actualizarHabitaciones(numero, habitacion.getTipoH_nombreTipo().getNombreTipo());;
         return "redirect:/habitaciones";
     }
     @GetMapping("/habitaciones/{numero}/edit/delete")

@@ -18,20 +18,20 @@ public interface HabitacionRepository extends JpaRepository<Habitacion,Integer>{
     Collection<Habitacion> darHabitaciones();
 
     @Query(value = "SELECT * FROM habitaciones WHERE numero= :numero", nativeQuery = true)
-    Habitacion darHabitacion(@Param("numero") int numero);
+    Habitacion darHabitacion(@Param("numero") Integer numero);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO habitaciones (numero, TiposH_nombreTipo) VALUES ( hotelAndes_sequence.nextval , :TiposH_nombreTipo)", nativeQuery = true)
-    void insertarHabitaciones(@Param("TiposH_nombreTipo") String TiposH_nombreTipo);
+    @Query(value = "INSERT INTO habitaciones (numero, TipoH_nombreTH) VALUES ( hotelAndes_sequence.nextval , :TipoH_nombreTH)", nativeQuery = true)
+    void insertarHabitaciones(@Param("TipoH_nombreTH") String TipoH_nombreTH);
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE habitaciones SET TiposH_nombreTipo = :TiposH_nombreTipo WHERE numero = :numero", nativeQuery = true)
-    void actualizarHabitaciones(@Param("numero") int numero, @Param("TiposH_nombreTipo") String TiposH_nombreTipo);
+    @Query(value = "UPDATE habitaciones SET TipoH_nombreTH = :TipoH_nombreTH WHERE numero = :numero", nativeQuery = true)
+    void actualizarHabitaciones(@Param("numero") Integer numero, @Param("TipoH_nombreTH") String TipoH_nombreTH);
     
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM habitaciones WHERE numero = :numero", nativeQuery = true)
-    void eliminarHabitacion(@Param("numero") int numero);
+    void eliminarHabitacion(@Param("numero") Integer numero);
 }

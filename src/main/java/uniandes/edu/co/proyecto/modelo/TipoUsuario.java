@@ -12,16 +12,16 @@ public class TipoUsuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String nombre;
+    private String tipoUser;
 
     public TipoUsuario(){;}
 
-    public String getNombre() {
-        return nombre;
+    public String getTipoUser() {
+        return tipoUser;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setTipoUser(String tipoUser) {
+        this.tipoUser = tipoUser;
     }
 
     

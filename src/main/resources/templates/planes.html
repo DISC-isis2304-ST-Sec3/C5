@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <div>
+        <h1>Lista de PLanes</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descuento</th>
+                    <th>Periodo de vigencia inicial</th>
+                    <th>Periodo de vigencia final</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <th:block th:each="plan : ${planes}">
+                <tr>
+                    <td th:text="${plan.nombrePlan}"></td>
+                    <td th:text="${plan.descuento}"></td>
+                    <td th:text="${plan.periodoVigenciaInicial}"></td>
+                    <td th:text="${plan.periodoVigenciaFinal}"></td>
+                    <td>
+                        <a th:href="@{planes/{nombrePlan}/edit(nombrePlan=${plan.nombrePlan})}" >
+                            Editar
+                        </a>
+                        <a th:href="@{planes/{nombrePlan}/delete(nombrePlan=${plan.nombrePlan})}" 
+                        onclick="return confirm('¿Está seguro de eliminar el plan?')">
+                            Borrar
+                        </a>
+                    </td>
+                </tr>
+            </th:block> 
+        </table>
+        <div>
+            <a th:href='@{planes/new}' class="btn btn-primary">Añadir plan</a>
+            <a th:href="@{/}" class="btn btn-primary">Volver Atrás</a>
+
+    </div>
+</div>
+    
+</body>
+</html>

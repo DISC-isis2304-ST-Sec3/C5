@@ -15,31 +15,31 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 
-    private Integer cedula;
+    private Integer idUser;
     private String tipoDocumento;
     private String nombreUsuario;
     private String correo;
 
     @ManyToOne
-    @JoinColumn(name = "TiposUsuarios_nombre", referencedColumnName = "nombre")
-    private TipoUsuario TiposUsuarios_nombre;
+    @JoinColumn(name = "TiposUsuarios_tipoUser", referencedColumnName = "tipoUser")
+    private TipoUsuario TiposUsuarios_tipoUser;
     
-    public Usuario(String tipoDocumento, String nombreUsuario, String correo, TipoUsuario TiposUsuarios_nombre){
+    public Usuario(String tipoDocumento, String nombreUsuario, String correo, TipoUsuario TiposUsuarios_tipoUser){
         
         this.tipoDocumento = tipoDocumento;
         this.nombreUsuario = nombreUsuario;
         this.correo = correo;
-        this.TiposUsuarios_nombre = TiposUsuarios_nombre;
+        this.TiposUsuarios_tipoUser = TiposUsuarios_tipoUser;
     }
 
     public Usuario(){;}
 
-    public Integer getCedula() {
-        return cedula;
+    public Integer getidUser() {
+        return idUser;
     }
 
-    public void setCedula(Integer cedula) {
-        this.cedula = cedula;
+    public void setIdUser(Integer cedula) {
+        this.idUser = cedula;
     }
 
     public String getTipoDocumento() {
@@ -67,11 +67,11 @@ public class Usuario {
     }
 
     public TipoUsuario getTipoUsuario() {
-        return TiposUsuarios_nombre;
+        return TiposUsuarios_tipoUser;
     }
 
-    public void setTipoUsuario(TipoUsuario TiposUsuarios_nombre) {
-        this.TiposUsuarios_nombre = TiposUsuarios_nombre;
+    public void setTipoUsuario(TipoUsuario TiposUsuarios_tipoUser) {
+        this.TiposUsuarios_tipoUser = TiposUsuarios_tipoUser;
     }
 
     

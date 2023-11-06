@@ -14,25 +14,25 @@ import uniandes.edu.co.proyecto.modelo.TipoUsuario;
 
 public interface TipoUsuarioRepository extends JpaRepository<TipoUsuario, String>{
 
-     @Query(value = "SELECT * FROM tiposUsuario", nativeQuery = true)
+     @Query(value = "SELECT * FROM tiposUsuarios", nativeQuery = true)
     Collection<TipoUsuario> darTiposUsuarios();
 
-    @Query(value = "SELECT * FROM tiposUsuario WHERE nombre= :nombre", nativeQuery = true)
-    TipoUsuario darTipoUsuario(@Param("nombre") String nombre);
+    @Query(value = "SELECT * FROM tiposUsuarios WHERE tipoUser= :tipoUser", nativeQuery = true)
+    TipoUsuario darTipoUsuario(@Param("tipoUser") String tipoUser);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO tiposUsuario (nombre) VALUES ( :nombre )", nativeQuery = true)
-    void insertarTiposUsuarios(@Param("nombre") String nombre);
+    @Query(value = "INSERT INTO tiposUsuarios (tipoUser)", nativeQuery = true)
+    void insertarTiposUsuarios();
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE tiposUsuario SET nombre = :nombre_actualizado WHERE nombre = :nombre", nativeQuery = true)
-    void actualizarTiposUsuarios(@Param("nombre") int nombre, @Param("nombre_actualizado") String nombre_actualizado);
+    @Query(value = "UPDATE tiposUsuarios SET tipoUser = :tipoUser WHERE tipoUser = :tipoUser", nativeQuery = true)
+    void actualizarTiposUsuarios(@Param("tipoUser") String tipoUser);
     
 
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM tiposUsuario WHERE nombre = :nombre", nativeQuery = true)
-    void eliminarTipoUsuario(@Param("nombre") String nombre);
+    @Query(value = "DELETE FROM tiposUsuarios WHERE tipoUser = :tipoUser", nativeQuery = true)
+    void eliminarTipoUsuario(@Param("tipoUser") String tipoUser);
 }

@@ -17,11 +17,11 @@ public class Habitacion {
     private Integer numero;
 
     @ManyToOne
-    @JoinColumn(name = "TipoH_nombreTipo", referencedColumnName = "nombreTipo")
-    private TipoH TipoH_nombreTipo;
+    @JoinColumn(name = "TipoH_nombreTipo", referencedColumnName = "nombreTH")
+    private TipoH TipoH_nombreTH;
 
-    public Habitacion(TipoH TipoH_nombreTipo){
-        this.TipoH_nombreTipo = TipoH_nombreTipo;
+    public Habitacion(TipoH TipoH_nombreTH){
+        this.TipoH_nombreTH = TipoH_nombreTH;
 
     }
     public Habitacion(){;}
@@ -32,10 +32,10 @@ public class Habitacion {
         this.numero = numero;
     }
     public TipoH getTipoH_nombreTipo() {
-        return TipoH_nombreTipo;
+        return TipoH_nombreTH;
     }
     public void setTipoH_nombreTipo(TipoH tipoH_nombreTipo) {
-        TipoH_nombreTipo = tipoH_nombreTipo;
+        TipoH_nombreTH = tipoH_nombreTipo;
     }
 
     
