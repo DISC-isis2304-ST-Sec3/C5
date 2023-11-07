@@ -1,5 +1,6 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,11 +15,11 @@ public class Empleado {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-
+    @Column(name = "IDEMPLEADO")
     private Integer idEmpleado;
 
     @ManyToOne
-    @JoinColumn(name = "TiposUsuarios_tipoUser", referencedColumnName = "tipoUser")
+    @JoinColumn(name = "TIPOSUSUARIOS_TIPOUSER", referencedColumnName = "TIPOUSER")
     private TipoUsuario TiposUsuarios_tipoUser;
 
     public Empleado(TipoUsuario TiposUsuarios_tipoUser){

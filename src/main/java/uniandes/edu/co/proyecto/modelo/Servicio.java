@@ -2,6 +2,7 @@ package uniandes.edu.co.proyecto.modelo;
 
 import java.sql.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,12 +15,18 @@ public class Servicio {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "IDSERVICIO")
 
     private Integer idServicio;
+    @Column(name = "NOMBRESERVICIO")
     private String nombreServicio;
+    @Column(name = "DESCRIPCION")
     private String descripcion;
+    @Column(name = "HORARIO")
     private String horario;
+    @Column(name = "CAPACIDAD")
     private Integer capacidad;
+    @Column(name = "COSTO")
     private double costo;
 
 

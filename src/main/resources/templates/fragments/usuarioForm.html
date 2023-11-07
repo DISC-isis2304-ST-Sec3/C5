@@ -20,11 +20,9 @@
         <input class="form-control" type="text" id="nombreUsuario" name="nombreUsuario" required th:value="${usuario.nombreUsuario}" />
         <label class="col-form-label">Correo:</label>
         <input class="form-control" type="text" id="correo" name="correo" required th:value=${usuario.correo}><br>
-        <label class="col-form-label" for="tipoUsuario">Tipo usuario:</label>
-        <select class="form-control" id="tipoUsuario" name="tipoUsuario" required>
-            <th:block th:each="tipoUsuario : ${tiposUsuarios}" >
-                <option th:value="${TiposUsuarios_tipoUser.tipoUser}" th:text="${TiposUsuarios_tipoUser.tipoUser}" th:selected="${usuario!=null || usuario.TiposUsuarios_tipoUser.tipoUser == TiposUsuarios_tipoUser.tipoUser}"></option>
-            </th:block>
+        <label class="col-form-label">Tipo usuario:</label>
+        <input class="form-control" type="text" id="tipoUsuario" name="tipoUsuario" required th:value=${usuario.TiposUsuarios_tipoUser.tipoUser}><br>
+        
        
         
         <div class="text-center">

@@ -2,6 +2,7 @@ package uniandes.edu.co.proyecto.modelo;
 
 import java.sql.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +17,8 @@ public class Consumo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "IDCONSUMO")
+
 
     private Integer idConsumo;
     private String descripcion;
@@ -23,7 +26,7 @@ public class Consumo {
     private double costo;
 
     @ManyToOne
-    @JoinColumn(name = "Servicios_idServicio", referencedColumnName = "idServicio")
+    @JoinColumn(name = "SERVICIOS_IDSERVICIO", referencedColumnName = "IDSERVICIO")
     private Servicio Servicios_idServicio;
 
     

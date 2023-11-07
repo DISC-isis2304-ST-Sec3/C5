@@ -26,9 +26,9 @@
                     <td th:text="${reservaServicio.idReservaServicio}"></td>
                     <td th:text="${reservaServicio.fecha}"></td>
                     <td th:text="${reservaServicio.duracion}"></td>
-                    <td th:text="${reservaServicio.TipoH_nombreTipo.nombreTH}"></td>
-                    <td th:text="${reservaServicio.TipoH_nombreTipo.nombreTH}"></td>
-                    <td th:text="${reservaServicio.TipoH_nombreTipo.nombreTH}"></td>
+                    <td th:text="${reservaServicio.Servicios_idServicio.idServicio}"></td>
+                    <td th:text="${reservaServicio.Reservas_idReserva.idReserva}"></td>
+                    <td th:text="${reservaServicio.Empleados_idEmpleado.idEmpleado}"></td>
                     <td>
                         <a th:href="@{reservasServicios/{idReservaServicio}/edit(idReservaServicio=${reservaServicio.idReservaServicio})}" >
                             Editar

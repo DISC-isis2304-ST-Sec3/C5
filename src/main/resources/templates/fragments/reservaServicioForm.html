@@ -18,24 +18,12 @@
         <input class="form-control" type="date" id="fecha" name="fecha" required th:value="${reservaServicio.fecha}" />
         <label for="duracion" class="col-form-label">Duracion:</label>
         <input class="form-control" type="number" id="duracion" name="duracion" required th:value="${reservaServicio.duracion}" />
-        <label class="col-form-label" for="servicio">Servicio:</label>
-        <select class="form-control" id="servicio" name="servicio" required>
-            <th:block th:each="servicio : ${servicios}" >
-                <option th:value="${Servicios_idServicio.idServicio}" th:text="${Servicios_idServicio.idServicio}" th:selected="${reservaServicio!=null || reservaServicio.Servicios_idServicio.idServicio == Servicios_idServicio.idServicio}"></option>
-            </th:block>
-        </select><br>
-        <label class="col-form-label" for="reserva">Reserva:</label>
-        <select class="form-control" id="reserva" name="reserva" required>
-            <th:block th:each="reserva : ${reservas}" >
-                <option th:value="${Reservas_idReserva.idReserva}" th:text="${Reservas_idReserva.idReserva}" th:selected="${Reservas_idReserva!=null || reservaServicio.Reservas_idReserva.idReserva == Reservas_idReserva.idReserva}"></option>
-            </th:block>
-        </select><br>
-        <label class="col-form-label" for="empleado">Empleado:</label>
-        <select class="form-control" id="empleado" name="empleado" required>
-            <th:block th:each="empleado : ${empleados}" >
-                <option th:value="${Empleados_idEmpleado.idEmpleado}" th:text="${Empleados_idEmpleado.idEmpleado}" th:selected="${reservaServicio!=null || reservaServicio.Empleados_idEmpleado.idEmpleado == Empleados_idEmpleado.idEmpleado}"></option>
-            </th:block>
-        </select><br>
+        <label for="Servicios_idServicio" class="col-form-label">Servicio:</label>
+        <input class="form-control" type="number" id="Servicios_idServicio" name="Servicios_idServicio" required th:value="${reservaServicio.Servicios_idServicio}" />
+        <label for="Reservas_idReserva" class="col-form-label">Reserva:</label>
+        <input class="form-control" type="number" id="Reservas_idReserva" name="Reservas_idReserva" required th:value="${reservaServicio.Reservas_idReserva}" />
+        <label for="Empleados_idEmpleado" class="col-form-label">Empleado:</label>
+        <input class="form-control" type="number" id="Empleados_idEmpleado" name="Empleados_idEmpleado" required th:value="${reservaServicio.Empleados_idEmpleado}" />
         
         <div class="text-center">
             <input type="submit" value="Guardar" class="btn btn-primary">

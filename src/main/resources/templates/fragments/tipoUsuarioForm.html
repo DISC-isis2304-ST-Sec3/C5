@@ -16,11 +16,11 @@
     <form>
         <label class="col-form-label">Nombre:</label>
         <select class="form-control" id="tipoUser" name="tipoUser" required>
-            <option value="GERENTE" th:selected="${tipoUsuario.tipoUser eq 'GERENTE'}">GERENTE</option>
-            <option value="RECEPCIONISTA" th:selected="${tipoUsuario.tipoUser eq 'RECEPCIONISTA'}">RECEPCIONISTA</option>
-            <option value="EMPLEADO" th:selected="${tipoUsuario.tipoUser eq 'EMPLEADO'}">EMPLEADO</option>
-            <option value="ADMINISTRADOR" th:selected="${tipoUsuario.tipoUser eq 'ADMINISTRADOR'}">ADMINISTRADOR</option>
-            <option value="CLIENTE" th:selected="${tipoUsuario.tipoUser eq 'CLIENTE'}">CLIENTE</option>
+            <option value="Administrador" th:selected="${tipoUsuario.tipoUser eq 'Administrador'}">Administrador</option>
+            <option value="Cliente" th:selected="${tipoUsuario.tipoUser eq 'Cliente'}">Cliente</option>
+            <option value="Empleado" th:selected="${tipoUsuario.tipoUser eq 'Empleado'}">Empleado</option>
+            <option value="Gerente" th:selected="${tipoUsuario.tipoUser eq 'Gerente'}">Gerente</option>
+            <option value="Recepcionista" th:selected="${tipoUsuario.tipoUser eq 'Recepcionista'}">Recepcionista</option>
         </select>
 
         <div class="text-center">

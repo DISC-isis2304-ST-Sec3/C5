@@ -2,6 +2,7 @@ package uniandes.edu.co.proyecto.modelo;
 
 import java.sql.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,10 +16,14 @@ public class Plan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "NOMBREPLAN")
 
     private String nombrePlan;
+    @Column(name = "DESCUENTO")
     private double descuento;
+    @Column(name = "PERIODOVIGENCIAINICIAL")
     private Date periodoVigenciaInicial;
+    @Column(name = "PERIODOVIGENCIAFINAL")
     private Date periodoVigenciaFinal;
     
     public Plan(double descuento, Date periodoVigenciaInicial, Date periodoVigenciaFinal ){
