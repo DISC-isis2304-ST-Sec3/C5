@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.controller;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import uniandes.edu.co.proyecto.modelo.Reserva;
 import uniandes.edu.co.proyecto.repositorio.ReservaRepository;
+import uniandes.edu.co.proyecto.repositorio.ReservaRepository.RespuestaRFC6;
+import uniandes.edu.co.proyecto.repositorio.ServicioRepository.RespuestaRFC8;
 
 @Controller
 public class ReservaController {
@@ -20,6 +24,13 @@ public class ReservaController {
 
     @GetMapping("/reservas")
     public String reservas(Model model){
+
+        Collection<RespuestaRFC6> RF6 = reservasRepository.analizarOperacion();
+        model.addAttribute("fecha_maxima_ocupacion", RF6.iterator().next().getfecha_maxima_ocupacion());
+        model.addAttribute("fecha_maximos_ingresos", RF6.iterator().next().getfecha_maximos_ingresos());
+        model.addAttribute("fecha_minima_demanda", RF6.iterator().next().getfecha_minima_demanda());
+        
+
         model.addAttribute("reservas", reservasRepository.darReservas());
         return "reservas";
     }
