@@ -14,6 +14,12 @@ import uniandes.edu.co.proyecto.modelo.Reserva;
 
 public interface ReservaRepository extends JpaRepository<Reserva,Integer>{
 
+    public interface RespuestaRFC6 {
+        Date getfecha_maxima_ocupacion();
+        Date getfecha_maximos_ingresos();
+        Date getfecha_minima_demanda(); 
+    }
+
     @Query(value = "SELECT * FROM reservas", nativeQuery = true)
     Collection<Reserva> darReservas();
 
@@ -34,5 +40,34 @@ public interface ReservaRepository extends JpaRepository<Reserva,Integer>{
     @Transactional
     @Query(value = "DELETE FROM reservas WHERE idReserva = :idReserva", nativeQuery = true)
     void eliminarReserva(@Param("idReserva") Integer idReserva);
+
+
+    @Query(value = "WITH Ocupacion AS (\n" + //
+            "    SELECT fechaentrada AS fecha_ocupacion, COUNT(*) AS cantidad_ocupaciones\n" + //
+            "    FROM reservas\n" + //
+            "    GROUP BY fechaentrada\n" + //
+            "    ORDER BY cantidad_ocupaciones DESC\n" + //
+            "    FETCH FIRST 1 ROW ONLY\n" + //
+            "),\n" + //
+            "Ingresos AS (\n" + //
+            "    SELECT fecha AS fecha_consumo, SUM(costo) AS ingresos_totales\n" + //
+            "    FROM consumos\n" + //
+            "    GROUP BY fecha\n" + //
+            "    ORDER BY ingresos_totales DESC\n" + //
+            "    FETCH FIRST 1 ROW ONLY\n" + //
+            "),\n" + //
+            "Demanda AS (\n" + //
+            "    SELECT fechaentrada AS fecha_demanda, COUNT(*) AS cantidad_ocupaciones\n" + //
+            "    FROM reservas\n" + //
+            "    GROUP BY fechaentrada\n" + //
+            "    ORDER BY cantidad_ocupaciones\n" + //
+            "    FETCH FIRST 1 ROW ONLY\n" + //
+            ")\n" + //
+            "SELECT\n" + //
+            "    Ocupacion.fecha_ocupacion AS fecha_maxima_ocupacion,\n" + //
+            "    Ingresos.fecha_consumo AS fecha_maximos_ingresos,\n" + //
+            "    Demanda.fecha_demanda AS fecha_minima_demanda\n" + //
+            "FROM Ocupacion, Ingresos, Demanda", nativeQuery = true)
+    Collection<RespuestaRFC6> analizarOperacion();
     
 }

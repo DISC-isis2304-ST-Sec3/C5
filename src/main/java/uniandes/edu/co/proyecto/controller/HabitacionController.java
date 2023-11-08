@@ -1,5 +1,6 @@
 package uniandes.edu.co.proyecto.controller;
 
+import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import uniandes.edu.co.proyecto.modelo.Habitacion;
 import uniandes.edu.co.proyecto.repositorio.HabitacionRepository;
+import uniandes.edu.co.proyecto.repositorio.HabitacionRepository.RespuestaRFC1;
 
 
 @Controller
@@ -19,6 +21,11 @@ public class HabitacionController {
 
     @GetMapping("/habitaciones")
     public String habitaciones(Model model){
+        Collection<RespuestaRFC1> informacion = habitacionRepository.darDineroRecolectadoPorServiciosPorHabitacionEnUltimoAño();
+
+        model.addAttribute("Numero_Habitacion", informacion.iterator().next().getNumero_Habitacion());
+        model.addAttribute("Servicio", informacion.iterator().next().getServicio());
+        model.addAttribute("Dinero_Recolectado", informacion.iterator().next().getDinero_Recolectado());
         model.addAttribute("habitaciones", habitacionRepository.darHabitaciones());
         return "habitaciones";
     }
