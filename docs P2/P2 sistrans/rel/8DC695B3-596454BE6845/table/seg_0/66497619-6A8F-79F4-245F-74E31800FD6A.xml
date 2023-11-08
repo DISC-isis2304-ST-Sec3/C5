@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="66497619-6A8F-79F4-245F-74E31800FD6A" name="Habitaciones">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>11F1D759-7134-4E40-47BB-F0FC2AB3C25F</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="numero" id="A574FCF5-9309-7060-17EB-ABA076A3D11E">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>9C6FAAB7-4E94-BDE1-9EF1-392724C03B30</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TiposH_nombreTH" id="7C45B3DA-6F50-A5B2-B128-6E57BAE41CC8">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>3438C336-A7B7-982C-0434-EFDE527A1556</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EEA13D4A-F208-2295-294D-40CF1DEBE1FB" referredColumn="7C57444E-5277-5A48-2C3D-DF2407B78CAD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="07930C90-7038-F665-C514-00BA08EAB2FB" name="Habitaciones_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>08D63C0D-5027-F632-972E-32C6A72DBA8D</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A574FCF5-9309-7060-17EB-ABA076A3D11E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D0F49242-DC36-890D-5FB5-B9BEB54F32A2" name="Habitaciones_TiposH_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>533D9056-48D4-4022-8AE0-DB4BF163A562</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C45B3DA-6F50-A5B2-B128-6E57BAE41CC8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7ED72F83-FDC1-AA16-FD92-D79BF00329BE" name="Servicios">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>3BBD0CEB-B55A-9F89-510A-A8CA59D5BE9F</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idServicio" id="88219F94-C35A-9EE6-0133-A3F0AF61A33B">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>41C7B094-D9A4-EACA-855B-EFF37D8047B9</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombreServicio" id="65140AC4-904D-6A84-A683-14C833CB72C9">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>709D385E-9BDF-DD12-2682-7E06F4431095</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="3272366C-BCD4-32BB-39EA-4F377915749C">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>68F388E9-E53A-50AE-111A-936B7196EF9E</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="horario" id="A3A1A088-C7EC-E861-9FDF-7177EE52E7E9">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>5EB3D1F0-8993-A220-8884-0FA4646F2076</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="1B1B942E-B1D0-A7AE-D652-B4DB9F02BEE4">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>00BE5E19-F255-75FE-C08A-DF468B132E67</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="58742437-9F8C-CF5F-A296-10E3F07582E5">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>6F4AFDB7-E5D3-05C8-7B98-F33D3003FD04</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,15,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="37C87D16-44B5-4C00-4A33-2730677A2B3B" name="Servicios_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>FA22F85D-917B-0E97-BA2C-5380D8B8CDD8</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88219F94-C35A-9EE6-0133-A3F0AF61A33B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ServiciosReservas" directorySegmentName="seg_0" id="A2E2003E-53FF-822B-D2EA-22887CD3562A">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 01:33:43 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<sourcePk>FA22F85D-917B-0E97-BA2C-5380D8B8CDD8</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>3BBD0CEB-B55A-9F89-510A-A8CA59D5BE9F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7ADBA236-4D7D-BD36-E354-3DD984F3B6FC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

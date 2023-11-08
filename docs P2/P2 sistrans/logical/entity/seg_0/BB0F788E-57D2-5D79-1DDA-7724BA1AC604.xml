@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BB0F788E-57D2-5D79-1DDA-7724BA1AC604" name="Planes">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:23:27 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nombrePlan" id="F0516B39-403E-4D2F-78FD-864DAA11F37B">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:23:53 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descuento" id="E3728323-26DB-F3EB-8B5B-DD97A03693E1">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:24:18 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="periodoVigenciaInicial" id="96010668-7EEB-D083-342D-C4C7B81AF91E">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:26:38 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="periodoVigenciaFinal" id="D0C0D712-3201-D703-C0DC-74C05C428CFF">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 15:17:42 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="76F94CDA-15F2-55CE-DF0A-4B46CBC993BD" name="PlanesConsumo PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:24:15 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F0516B39-403E-4D2F-78FD-864DAA11F37B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

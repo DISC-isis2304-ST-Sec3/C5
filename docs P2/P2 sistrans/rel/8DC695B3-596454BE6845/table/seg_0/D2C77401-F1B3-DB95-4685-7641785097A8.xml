@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D2C77401-F1B3-DB95-4685-7641785097A8" name="Consumos">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>8263130E-4EA7-C864-F732-63161354891A</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idConsumo" id="94C3C087-55D6-9DB8-9077-3A2F33B4E3AF">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>FFFAD1C7-A197-3FE9-91AD-8133EE96EFB3</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="7A4B4B60-FD8A-E9FE-810A-1DE1416C753E">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>19A6164D-E050-A769-EEDA-C7537B6B12EE</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="C9E478D4-8996-6977-3A5A-3523A7CF513A">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>6ACFAB1E-C8DD-DE4C-4E6D-E4558A295AAD</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="D111786A-FAB2-91F8-62E6-FE1F54DB1DB0">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>CA771A40-0B45-37FF-F573-ECF7ECFE7177</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,15,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Servicios_idServicio" id="4E6FAE11-1B25-B8CF-3A71-D5D25113BF23">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>C9A567EB-5A73-E8EE-FBBB-3C872D9C5938</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F8FA67E6-9397-116A-51A1-1A0B64ED9D2C" referredColumn="88219F94-C35A-9EE6-0133-A3F0AF61A33B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="41F8AB42-ED36-7D69-AA62-A76B37870447" name="Consumos_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>8BCB3841-6B30-C98A-1AB7-ACB52AB95440</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94C3C087-55D6-9DB8-9077-3A2F33B4E3AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CD991361-7910-D1A9-7C0A-C1ACC68AAD6B" name="Consumos_Servicios_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>8F64CCD1-5804-8FC6-7C9A-5DE3DAA050A9</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4E6FAE11-1B25-B8CF-3A71-D5D25113BF23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

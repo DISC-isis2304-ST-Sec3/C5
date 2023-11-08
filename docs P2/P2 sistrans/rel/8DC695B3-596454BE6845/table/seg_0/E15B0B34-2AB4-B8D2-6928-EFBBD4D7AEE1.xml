@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E15B0B34-2AB4-B8D2-6928-EFBBD4D7AEE1" name="Planes">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>BB0F788E-57D2-5D79-1DDA-7724BA1AC604</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombrePlan" id="A820344C-94C5-ED50-3EBA-79ED9605995E">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>F0516B39-403E-4D2F-78FD-864DAA11F37B</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descuento" id="A2040F09-B9E3-B4F5-20FD-A08B60710982">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>E3728323-26DB-F3EB-8B5B-DD97A03693E1</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="periodoVigenciaInicial" id="72981631-5909-C78A-CF8E-7281778811A7">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>96010668-7EEB-D083-342D-C4C7B81AF91E</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="periodoVigenciaFinal" id="34AE6012-DA8F-AA1D-77D4-EEC2EC0F2154">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>D0C0D712-3201-D703-C0DC-74C05C428CFF</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AB89AE51-BB8C-CBE3-3781-0D340E86CBD9" name="Planes_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>76F94CDA-15F2-55CE-DF0A-4B46CBC993BD</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A820344C-94C5-ED50-3EBA-79ED9605995E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

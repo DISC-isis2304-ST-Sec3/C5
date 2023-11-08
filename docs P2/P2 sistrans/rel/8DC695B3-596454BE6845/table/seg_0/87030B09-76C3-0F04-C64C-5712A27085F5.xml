@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="87030B09-76C3-0F04-C64C-5712A27085F5" name="TiposH">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>E3C25BE8-9C73-6514-7974-1551626F18AB</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombreTH" id="7C57444E-5277-5A48-2C3D-DF2407B78CAD">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>EB81C5BB-81D2-4E77-1F9F-0D62909447EE</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="Doble" description=""/>
+<valueDef value="Familiar" description=""/>
+<valueDef value="Sencilla" description=""/>
+<valueDef value="Suite" description=""/>
+<valueDef value="SuitePresidencial" description=""/>
+</listOfValues>
+<defaultValue>Familiar</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dotacion" id="28E2D032-3BAA-EBF6-E7F5-1BD1C8262FEA">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>B08D692A-21C8-28DC-7673-FDCC1363CE78</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="8657D244-20BA-393E-06CE-C26810E5A9D4">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>5DA1123D-D11A-D694-320B-7AC2461DAAF6</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costoPorNoche" id="0989497D-DEE7-E110-2A48-33E6ADB6C403">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>E3B6E839-98F1-1A10-EFA6-B68DC36033DC</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,15,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E3A97228-9042-6F4D-468A-C757EFAA5728" name="TiposH_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>2E133BC5-BF25-A2F4-FB64-B42B79ED9E7A</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C57444E-5277-5A48-2C3D-DF2407B78CAD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

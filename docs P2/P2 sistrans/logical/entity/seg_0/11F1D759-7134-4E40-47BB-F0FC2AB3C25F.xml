@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="11F1D759-7134-4E40-47BB-F0FC2AB3C25F" name="Habitaciones">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 04:29:04 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="numero" id="9C6FAAB7-4E94-BDE1-9EF1-392724C03B30">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 04:29:17 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombreTH" id="3438C336-A7B7-982C-0434-EFDE527A1556">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 02:15:23 UTC</createdTime>
+<generatorID>533D9056-48D4-4022-8AE0-DB4BF163A562</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<referedAttribute>EB81C5BB-81D2-4E77-1F9F-0D62909447EE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="08D63C0D-5027-F632-972E-32C6A72DBA8D" name="Habitaciones PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 04:29:28 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9C6FAAB7-4E94-BDE1-9EF1-392724C03B30</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

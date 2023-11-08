@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1D50B1A6-064B-EE24-1FB2-B5A163D7EACA" name="Reservas">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 04:58:44 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idReserva" id="62638F74-E2B5-645E-39B0-7141287AA25E">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 05:07:29 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaEntrada" id="F8BE2F6C-CC35-9F53-6F86-5D23CE787739">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 05:08:08 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaSalida" id="7AC653A8-B6AB-20C8-7A6D-90345CC44906">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 05:08:22 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cantidadPersonas" id="BC47AFD3-462F-6AD7-3796-D81A5C342F85">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 05:11:23 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombrePlan" id="270BB239-A9CB-CB4B-A776-B677B6A8AB04">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 02:08:48 UTC</createdTime>
+<generatorID>EF5124A2-E518-8D76-7BBD-4500352DAA39</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<referedAttribute>F0516B39-403E-4D2F-78FD-864DAA11F37B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idUser" id="AE2F8A07-5F9A-CC29-1496-A1AA98080B0A">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-05 23:04:28 UTC</createdTime>
+<generatorID>DE9D59A1-4BCB-3B0B-4486-4CE06C692257</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<referedAttribute>8B9A15A5-3D1D-E7B0-A27D-A01AE43B59EA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numero" id="7A47B833-FD07-8212-9989-9F7BA7AF3A1D">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:40:15 UTC</createdTime>
+<generatorID>F6846A4A-279C-13A4-2155-F57555D3E49E</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<referedAttribute>9C6FAAB7-4E94-BDE1-9EF1-392724C03B30</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A234E9CF-A055-4BF3-0547-170EEE173DB2" name="ReservasAlojamiento PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-30 05:07:49 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>62638F74-E2B5-645E-39B0-7141287AA25E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

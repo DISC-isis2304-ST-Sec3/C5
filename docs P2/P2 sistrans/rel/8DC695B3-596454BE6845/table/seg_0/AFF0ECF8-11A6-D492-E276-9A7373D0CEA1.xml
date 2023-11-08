@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AFF0ECF8-11A6-D492-E276-9A7373D0CEA1" name="Empleados">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>498BE4E9-E55C-21E2-A85F-288D30B19F00</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idEmpleado" id="5855A50E-B9FC-A872-5565-CC638D6A98C5">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>519B2751-D0BC-5703-390B-E39FFC53F450</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TiposUsuarios_tipoUser" id="1CB560F8-981C-9F0B-88D4-BD1D33168B2C">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>1B16F866-A1C3-64A6-89ED-D18C9A027AA5</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="Administrador" description=""/>
+<valueDef value="Empleado" description=""/>
+<valueDef value="Gerente" description=""/>
+<valueDef value="Recepcionista" description=""/>
+</listOfValues>
+<defaultValue>Empleado</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8AF8CF7D-203A-2D93-8A15-C669B9ED8A60" referredColumn="7EF7EF9E-C587-E133-1E39-C6BB82F63C21"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="36F04C44-6E74-52EB-E91C-6661544071A4" name="Empleados_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>9FD4E102-C372-0118-A400-6B1FE6F0091C</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5855A50E-B9FC-A872-5565-CC638D6A98C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45DC1D7E-C771-87F8-B9A7-CC2E9DC57F68" name="Empleados_TiposUsuarios_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>FB8BD007-FEEF-E027-7663-EB958AF573C9</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CB560F8-981C-9F0B-88D4-BD1D33168B2C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

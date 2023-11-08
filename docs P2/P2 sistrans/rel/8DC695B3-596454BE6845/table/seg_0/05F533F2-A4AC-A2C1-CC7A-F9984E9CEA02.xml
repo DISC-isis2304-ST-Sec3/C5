@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="05F533F2-A4AC-A2C1-CC7A-F9984E9CEA02" name="TiposUsuarios">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>C17E55F7-7F41-FB46-B27C-0D8522C3AB55</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tipoUser" id="7EF7EF9E-C587-E133-1E39-C6BB82F63C21">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>D38D7438-BE65-6261-187C-55649A76E114</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="Administrador" description=""/>
+<valueDef value="Cliente" description=""/>
+<valueDef value="Empleado" description=""/>
+<valueDef value="Gerente" description=""/>
+<valueDef value="Recepcionista" description=""/>
+</listOfValues>
+<defaultValue>Cliente</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2475DD6F-4E90-17D7-3953-6EC29B39635D" name="TiposUsuarios_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>48B6AA07-C840-019C-AA0C-DBB92412E1F8</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7EF7EF9E-C587-E133-1E39-C6BB82F63C21"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

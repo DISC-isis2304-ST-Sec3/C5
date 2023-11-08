@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E3C25BE8-9C73-6514-7974-1551626F18AB" name="TiposH">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 02:12:37 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nombreTH" id="EB81C5BB-81D2-4E77-1F9F-0D62909447EE">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 02:12:54 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="Doble" description=""/>
+<valueDef value="Familiar" description=""/>
+<valueDef value="Sencilla" description=""/>
+<valueDef value="Suite" description=""/>
+<valueDef value="SuitePresidencial" description=""/>
+</listOfValues>
+<defaultValue>Familiar</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dotacion" id="B08D692A-21C8-28DC-7673-FDCC1363CE78">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 02:13:37 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="capacidad" id="5DA1123D-D11A-D694-320B-7AC2461DAAF6">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 02:14:07 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costoPorNoche" id="E3B6E839-98F1-1A10-EFA6-B68DC36033DC">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 02:14:30 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,15,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2E133BC5-BF25-A2F4-FB64-B42B79ED9E7A" name="TipoH PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 02:13:25 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EB81C5BB-81D2-4E77-1F9F-0D62909447EE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

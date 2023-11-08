@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5580BF57-0758-5E82-690D-4F09D1DE6D0E" name="ReservasServicios">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>7ADBA236-4D7D-BD36-E354-3DD984F3B6FC</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idReservaS" id="E1B99998-2CD8-5BF1-665F-DE6FFF99A793">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>FC116F58-CEC4-B7E3-DCA6-DA02F36DF6A7</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="0CA7CCC5-E70F-BA1F-1A3E-05F776FF673F">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>988FA2C5-76D6-B34C-C2C2-6805163F40E1</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="duracion" id="8BE63C20-5B92-E4B3-817D-EB30BFECFD23">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>15582CD9-45E1-2ECD-B6B9-4E22141C44AF</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Servicios_idServicio" id="2F4D35CD-971E-2B13-13E3-9F901A674B05">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>D478A27A-F55D-099E-5A37-B2B63F5F48E2</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3DDEC786-489A-34BD-03A4-2839D131628A" referredColumn="88219F94-C35A-9EE6-0133-A3F0AF61A33B"/>
+</associations>
+</Column>
+<Column name="Reservas_idReserva" id="38A72508-086E-DD68-CB9E-BB0046B90D9D">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>4A418A94-13A5-7332-667A-E192703AFD78</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5C1CE593-FC57-D443-F166-3DF79D1DCDA4" referredColumn="CFEC1D2F-3591-3A4A-9E93-7FFEEC243E5A"/>
+</associations>
+</Column>
+<Column name="Empleados_idEmpleado" id="48CD9DB8-433C-1B22-0FE3-A18C16C6CE5B">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>1D6CACAC-3F8A-CABC-4978-C7F5316F38B6</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AC22E200-8C22-B339-CF62-1B2ABE0E350B" referredColumn="5855A50E-B9FC-A872-5565-CC638D6A98C5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="312812A7-0B4D-01E4-3454-28A1FCEC9201" name="ReservasServicios_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>9C7C06D0-BFAF-5944-4C8A-080C9A6CC16B</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1B99998-2CD8-5BF1-665F-DE6FFF99A793"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B4905D8F-74C0-0F2C-1B4D-E18B3B0D5AFE" name="ReservasServicios_Empleados_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>6E76CAD7-0095-4E09-AE15-C3CC952CF26E</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48CD9DB8-433C-1B22-0FE3-A18C16C6CE5B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="18FAE034-DAB0-CAF4-648E-06FAD6923577" name="ReservasServicios_Reservas_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>6BBF8B70-BC9E-004B-5884-7660F69DF59F</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="38A72508-086E-DD68-CB9E-BB0046B90D9D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2425BF5-38E2-A1B0-96A5-8265EA372419" name="ReservasServicios_Servicios_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>A2E2003E-53FF-822B-D2EA-22887CD3562A</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F4D35CD-971E-2B13-13E3-9F901A674B05"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

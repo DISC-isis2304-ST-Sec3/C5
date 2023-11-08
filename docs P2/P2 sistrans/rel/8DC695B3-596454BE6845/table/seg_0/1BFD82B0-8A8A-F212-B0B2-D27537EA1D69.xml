@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1BFD82B0-8A8A-F212-B0B2-D27537EA1D69" name="Usuarios">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>4AB0D813-290A-F30B-D85D-14F804476594</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idUser" id="AB96FBD9-2920-C195-CF85-7A118A3FAF88">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>8B9A15A5-3D1D-E7B0-A27D-A01AE43B59EA</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipoDocumento" id="682EC084-1432-3F12-0F44-28B26A0886DD">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>0421251D-145C-18D1-CC25-3331D9474C78</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<constraintName>tiposDocumento</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="tipo"/>
+</checkConstraint>
+<listOfValues>
+<valueDef value="CC" description=""/>
+<valueDef value="PASAPORTE" description=""/>
+<valueDef value="TI" description=""/>
+</listOfValues>
+<defaultValue>CC</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombreUsuario" id="8FFC46DA-6D63-8A5E-5240-1A756A7602CA">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>0057540A-E17D-D4EE-0850-0BBF2D0EB050</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="ABC6A51B-1653-BA0F-2A0C-4127808A62B5">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>B5992A75-8903-B441-50A6-B0261F1C77F0</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TiposUsuarios_tipoUser" id="AD002A81-4EDB-FEA0-BA3B-283354CED406">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>D0D91FB8-FB22-DD6A-46EC-DFDFB5624BDB</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="Cliente" description=""/>
+</listOfValues>
+<defaultValue>Cliente</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E9D953F2-59DA-8CA1-9EE9-12AD9177FAFF" referredColumn="7EF7EF9E-C587-E133-1E39-C6BB82F63C21"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3B8C1513-84C4-4452-D29B-EB4E7D19A570" name="Usuarios_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>D694E7CA-5CD5-BD07-D90C-C70E2B2733FE</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB96FBD9-2920-C195-CF85-7A118A3FAF88"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="50B0D4C4-D250-BB8D-DE45-80CAB9A14A50" name="Usuarios_TiposUsuarios_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>A5781599-63EF-C4E8-0760-A64919E820ED</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD002A81-4EDB-FEA0-BA3B-283354CED406"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

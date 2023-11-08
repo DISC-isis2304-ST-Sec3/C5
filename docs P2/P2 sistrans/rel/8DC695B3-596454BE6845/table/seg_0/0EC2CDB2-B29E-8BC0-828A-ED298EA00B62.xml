@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0EC2CDB2-B29E-8BC0-828A-ED298EA00B62" name="Reservas">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>1D50B1A6-064B-EE24-1FB2-B5A163D7EACA</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idReserva" id="CFEC1D2F-3591-3A4A-9E93-7FFEEC243E5A">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>62638F74-E2B5-645E-39B0-7141287AA25E</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fechaEntrada" id="D82CC10D-FF21-59DD-0309-9A25BAAC7D71">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>F8BE2F6C-CC35-9F53-6F86-5D23CE787739</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fechaSalida" id="CAE2A42C-0ECB-8936-8A6F-61D06CE8D068">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>7AC653A8-B6AB-20C8-7A6D-90345CC44906</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidadPersonas" id="A8D9F9EA-7637-69E7-6E5B-B767D422A58B">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>BC47AFD3-462F-6AD7-3796-D81A5C342F85</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Planes_nombrePlan" id="98901957-885E-26AA-B656-02AABA9C2EFF">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>270BB239-A9CB-CB4B-A776-B677B6A8AB04</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A6397F5-98D3-35FC-5407-E955BBF96FA6" referredColumn="A820344C-94C5-ED50-3EBA-79ED9605995E"/>
+</associations>
+</Column>
+<Column name="Usuarios_idUser" id="4CB2947B-AD9E-E84E-9458-7CFA0A62B92A">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>AE2F8A07-5F9A-CC29-1496-A1AA98080B0A</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C22803AF-34D6-BEC8-C48D-F61835CF641B" referredColumn="AB96FBD9-2920-C195-CF85-7A118A3FAF88"/>
+</associations>
+</Column>
+<Column name="Habitaciones_numero" id="7839CFBA-1A98-E546-C35D-5C53A07443F1">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>7A47B833-FD07-8212-9989-9F7BA7AF3A1D</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EB093812-2ED0-423D-4E61-D6A36BA3914F" referredColumn="A574FCF5-9309-7060-17EB-ABA076A3D11E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B14AD4E4-B64B-7975-6B56-958B3DB4624C" name="Reservas_PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>A234E9CF-A055-4BF3-0547-170EEE173DB2</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFEC1D2F-3591-3A4A-9E93-7FFEEC243E5A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B10E2040-4E36-1BB7-2D11-EBEFD06A1141" name="Reservas_Planes_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>EF5124A2-E518-8D76-7BBD-4500352DAA39</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98901957-885E-26AA-B656-02AABA9C2EFF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B82D3C30-6943-0BB6-14A4-808D323236F7" name="Reservas_Usuarios_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>DE9D59A1-4BCB-3B0B-4486-4CE06C692257</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4CB2947B-AD9E-E84E-9458-7CFA0A62B92A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="145510D7-229F-3B96-230C-292AFA0A2C2D" name="Reservas_Habitaciones_FK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-11-06 21:49:03 UTC</createdTime>
+<generatorID>F6846A4A-279C-13A4-2155-F57555D3E49E</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7839CFBA-1A98-E546-C35D-5C53A07443F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

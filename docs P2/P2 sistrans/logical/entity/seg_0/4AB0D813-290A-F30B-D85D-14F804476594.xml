@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4AB0D813-290A-F30B-D85D-14F804476594" name="Usuarios">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 16:47:25 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idUser" id="8B9A15A5-3D1D-E7B0-A27D-A01AE43B59EA">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 16:47:48 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipoDocumento" id="0421251D-145C-18D1-CC25-3331D9474C78">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 16:57:21 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<constraintName>tiposDocumento</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="tipo"/>
+</checkConstraint>
+<listOfValues>
+<valueDef value="CC" description=""/>
+<valueDef value="PASAPORTE" description=""/>
+<valueDef value="TI" description=""/>
+</listOfValues>
+<defaultValue>CC</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombreUsuario" id="0057540A-E17D-D4EE-0850-0BBF2D0EB050">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:10:59 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="correo" id="B5992A75-8903-B441-50A6-B0261F1C77F0">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 17:11:30 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipoUser" id="D0D91FB8-FB22-DD6A-46EC-DFDFB5624BDB">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-10-29 01:37:45 UTC</createdTime>
+<generatorID>A5781599-63EF-C4E8-0760-A64919E820ED</generatorID>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="true"/>
+</engineerTo>
+<referedAttribute>D38D7438-BE65-6261-187C-55649A76E114</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="Cliente" description=""/>
+</listOfValues>
+<defaultValue>Cliente</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D694E7CA-5CD5-BD07-D90C-C70E2B2733FE" name="Usuarios PK">
+<createdBy>paulinaarrazola</createdBy>
+<createdTime>2023-09-29 16:57:14 UTC</createdTime>
+<ownerDesignName>P2 sistrans</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="8DC695B3-F7C7-6E9A-72A7-596454BE6845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8B9A15A5-3D1D-E7B0-A27D-A01AE43B59EA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
