@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.controller;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import uniandes.edu.co.proyecto.modelo.Consumo;
 import uniandes.edu.co.proyecto.repositorio.ConsumoRepository;
+import uniandes.edu.co.proyecto.repositorio.ConsumoRepository.RespuestaRFC5;
+import uniandes.edu.co.proyecto.repositorio.ServicioRepository.RespuestaRFC2;
+import uniandes.edu.co.proyecto.repositorio.ServicioRepository.RespuestaRFC4;
 
 
 
@@ -20,8 +25,20 @@ public class ConsumoController {
     private ConsumoRepository consumoRepository;
 
     @GetMapping("/consumos")
-    public String consumo(Model model){
-        model.addAttribute("consumos", consumoRepository.darConsumos());
+    public String consumo(Model model, String nombreUsuario, String fechaInicio, String fechaFin){
+
+        if((nombreUsuario == null || nombreUsuario.equals("")) || (fechaInicio == null || fechaInicio.equals("")) || (fechaFin == null || fechaFin.equals("")))
+        {
+           model.addAttribute("consumos", consumoRepository.darConsumos());
+        }
+        else
+        {
+            Collection<RespuestaRFC5> RF5 = consumoRepository.darConsumoPorUsuarioYFechas(nombreUsuario, fechaInicio, fechaFin);
+            model.addAttribute("idUser", RF5.iterator().next().getIDUser());
+            model.addAttribute("nombreUsuario", RF5.iterator().next().getNombreUsuario());
+            model.addAttribute("Total_Gastado_En_Consumos", RF5.iterator().next().getTotal_Gastado_En_Consumos());
+        }
+        
         return "consumos";
     }
     @GetMapping("/consumos/new")
