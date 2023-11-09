@@ -17,7 +17,6 @@ public class Plan {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "NOMBREPLAN")
-
     private String nombrePlan;
     @Column(name = "DESCUENTO")
     private double descuento;

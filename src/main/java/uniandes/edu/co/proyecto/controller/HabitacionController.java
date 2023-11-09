@@ -24,13 +24,13 @@ public class HabitacionController {
     public String habitaciones(Model model){
         
         Collection<RespuestaRFC1> RF1 = habitacionRepository.darDineroRecolectadoPorServiciosPorHabitacionEnUltimoAño();
-        model.addAttribute("Numero_Habitacion", RF1.iterator().next().getNumero_Habitacion());
-        model.addAttribute("Servicio", RF1.iterator().next().getServicio());
-        model.addAttribute("Dinero_Recolectado", RF1.iterator().next().getDinero_Recolectado());
+        //model.addAttribute("Numero_Habitacion", RF1.iterator().next().getNumero_Habitacion());
+        //model.addAttribute("Servicio", RF1.iterator().next().getServicio());
+        //model.addAttribute("Dinero_Recolectado", RF1.iterator().next().getDinero_Recolectado());
 
         Collection<RespuestaRFC3> RF3 = habitacionRepository.darIndiceDeOcupacionEnUltimoAño();
-        model.addAttribute("Numero_Habitacion", RF3.iterator().next().getnumero_habitacion());
-        model.addAttribute("Servicio", RF3.iterator().next().getocupacion_porcentaje());
+        //model.addAttribute("Numero_Habitacion", RF3.iterator().next().getnumero_habitacion());
+        //model.addAttribute("Servicio", RF3.iterator().next().getocupacion_porcentaje());
         
         
         
@@ -44,7 +44,7 @@ public class HabitacionController {
     }
     @PostMapping("/habitaciones/new/save")
     public String habitacionGuardar(@ModelAttribute Habitacion habitacion){
-        habitacionRepository.insertarHabitaciones(habitacion.getTipoH_nombreTipo().getNombreTipo());
+        habitacionRepository.insertarHabitaciones(habitacion.getTiposH_nombreTipo().getNombreTipo());
         return "redirect:/habitaciones";
     }
     @GetMapping("/habitaciones/{numero}/edit")
@@ -59,7 +59,7 @@ public class HabitacionController {
     }
     @PostMapping("/habitaciones/{numero}/edit/save")
     public String habitacionEditarGuardar(@PathVariable("numero") int numero, @ModelAttribute Habitacion habitacion){
-        habitacionRepository.actualizarHabitaciones(numero, habitacion.getTipoH_nombreTipo().getNombreTipo());;
+        habitacionRepository.actualizarHabitaciones(numero, habitacion.getTiposH_nombreTipo().getNombreTipo());;
         return "redirect:/habitaciones";
     }
     @GetMapping("/habitaciones/{numero}/edit/delete")

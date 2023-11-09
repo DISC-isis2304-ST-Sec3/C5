@@ -14,6 +14,8 @@
         <h1 class="text-center" th:text="${titulo}"></h1>
     
     <form>
+        <label class="col-form-label">Servicio:</label>
+        <input class="form-control" type="text" id="Servicios_idServicio" name="Servicios_idServicio" required th:value="${consumo.Servicios_idServicio}" />
         <label class="col-form-label">Descripcion:</label>
         <input class="form-control" type="text" id="descripcion" name="descripcion" required th:value="${consumo.descripcion}" />
         <label for="fecha" class="col-form-label">Fecha:</label>

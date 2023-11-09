@@ -33,10 +33,10 @@ public class ServicioController {
     @GetMapping("/servicios")
     public String servicio(Model model, String RF2FechaInicio, String RF2FechaFin, String RF4CostoInicial, String RF4CostoFin, String RF4FechaInicio, String RF4FechaFin, String nameServicio){
 
-        Collection<RespuestaRFC8> RF8 = servicioRepository.darServiciosPocaDemanda();
-        model.addAttribute("idServicio", RF8.iterator().next().getIDServicio());
-        model.addAttribute("nombreServicio", RF8.iterator().next().getNombreServicio());
-        model.addAttribute("solicitudes_semanales", RF8.iterator().next().getSolicitudesSemanales());
+        //Collection<RespuestaRFC8> RF8 = servicioRepository.darServiciosPocaDemanda();
+        //model.addAttribute("idServicio", RF8.iterator().next().getIDServicio());
+        //model.addAttribute("nombreServicio", RF8.iterator().next().getNombreServicio());
+        //model.addAttribute("solicitudes_semanales", RF8.iterator().next().getSolicitudesSemanales());
         
 
         if((RF2FechaInicio == null || RF2FechaInicio.equals("")) || (RF2FechaFin == null || RF2FechaFin.equals("")) || (RF4CostoInicial == null || RF4CostoInicial.equals("")) || (RF4CostoFin == null || RF4CostoFin.equals("")) || (RF4FechaInicio == null || RF4FechaInicio.equals("")) || (RF4FechaFin == null || RF4FechaFin.equals("")))

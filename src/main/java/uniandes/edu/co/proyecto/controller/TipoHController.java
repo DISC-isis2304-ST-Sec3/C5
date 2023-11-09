@@ -20,7 +20,7 @@ public class TipoHController {
 
     @GetMapping("/tiposH")
     public String tipoH(Model model){
-        model.addAttribute("tipoH", tipoHRepository.darTiposH());
+        model.addAttribute("tiposH", tipoHRepository.darTiposH());
         return "tiposH";
     }
     @GetMapping("/tiposH/new")

@@ -19,17 +19,17 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-            <th:block th:each="tipoH : ${tipoH}"></th:block>
+            <th:block th:each="tipoH : ${tiposH}"></th:block>
                 <tr>
                     <td th:text="${tipoH.nombreTH}"></td>
                     <td th:text="${tipoH.dotacion}"></td>
                     <td th:text="${tipoH.capacidad}"></td>
                     <td th:text="${tipoH.costoPorNoche}"></td>
                     <td>
-                        <a th:href="@{tipoH/{nombreTH}/edit(nombreTH=${tipoH.nombreTH})}" >
+                        <a th:href="@{tiposH/{nombreTH}/edit(nombreTH=${tipoH.nombreTH})}" >
                             Editar
                         </a>
-                        <a th:href="@{tipoH/{nombreTH}/delete(nombreTH=${tipoH.nombreTH})}" 
+                        <a th:href="@{tiposH/{nombreTH}/delete(nombreTH=${tipoH.nombreTH})}" 
                         onclick="return confirm('¿Está seguro de eliminar el tipo de habitación?')">
                             Borrar
                         </a>

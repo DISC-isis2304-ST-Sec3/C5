@@ -32,17 +32,17 @@ public class UsuarioController {
     public String usuario(Model model, String RF9NombreServicio, String RF9FechaInicio, String RF9FechaFin, String RF10NombreServicio, String RF10FechaInicio, String RF10FechaFin){
 
         Collection<RespuestaRFC7> RF7 = usuarioRepository.darBuenosClientes();
-        model.addAttribute("idUser", RF7.iterator().next().getIDUser());
-        model.addAttribute("nombreUsuario", RF7.iterator().next().getNombreUsuario());
-        model.addAttribute("Información de buen Cliente", RF7.iterator().next().getInfoBuenCliente());
+        //model.addAttribute("idUser", RF7.iterator().next().getIDUser());
+        //model.addAttribute("nombreUsuario", RF7.iterator().next().getNombreUsuario());
+        //model.addAttribute("Información de buen Cliente", RF7.iterator().next().getInfoBuenCliente());
         
 
         Collection<RespuestaRFC12> RF12 = usuarioRepository.darClientesExcelentes();
-        model.addAttribute("idUser", RF12.iterator().next().getIDUser());
-        model.addAttribute("tipoDocumento", RF12.iterator().next().getTipoDocumento());
-        model.addAttribute("correo", RF12.iterator().next().getCorreo());
-        model.addAttribute("nombreUsuario", RF12.iterator().next().getNombreUsuario());
-        model.addAttribute("Razon de ser un Excelente Cliente", RF12.iterator().next().getRazon());
+        //model.addAttribute("idUser", RF12.iterator().next().getIDUser());
+        //model.addAttribute("tipoDocumento", RF12.iterator().next().getTipoDocumento());
+        //model.addAttribute("correo", RF12.iterator().next().getCorreo());
+        //model.addAttribute("nombreUsuario", RF12.iterator().next().getNombreUsuario());
+        //model.addAttribute("Razon de ser un Excelente Cliente", RF12.iterator().next().getRazon());
 
         if((RF9NombreServicio == null || RF9NombreServicio.equals("")) || (RF9FechaInicio == null || RF9FechaInicio.equals("")) || (RF9FechaFin == null || RF9FechaFin.equals("")) || (RF10NombreServicio == null || RF10NombreServicio.equals("")) || (RF10FechaInicio == null || RF10FechaInicio.equals("")) || (RF10FechaFin == null || RF10FechaFin.equals("")))
         {

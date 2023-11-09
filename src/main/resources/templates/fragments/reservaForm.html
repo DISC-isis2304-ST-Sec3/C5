@@ -20,24 +20,12 @@
         <input class="form-control" type="date" id="fechaSalida" name="fechaSalida" required th:value="${reserva.fechaSalida}" />
         <label for="cantidadPersonas" class="col-form-label">Cantidad Personas:</label>
         <input class="form-control" type="number" id="cantidadPersonas" name="cantidadPersonas" required th:value=${reserva.cantidadPersonas}><br>
-        <label class="col-form-label" for="usuario">Usuario:</label>
-        <select class="form-control" id="usuario" name="usuario" required>
-            <th:block th:each="usuario : ${usuarios}" >
-                <option th:value="${Usuario_idUser.idUser}" th:text="${Usuario_idUser.idUser}" th:selected="${reserva!=null || reserva.Usuario_idUser.idUser == Usuario_idUser.idUser}"></option>
-            </th:block>
-        </select><br>
-        <label class="col-form-label" for="plan">Plan:</label>
-        <select class="form-control" id="plan" name="plan" required>
-            <th:block th:each="plan : ${planes}" >
-                <option th:value="${Planes_nombrePlan.nombrePlan}" th:text="${Planes_nombrePlan.nombrePlan}" th:selected="${reserva!=null || reserva.Planes_nombrePlan.nombrePlan == Planes_nombrePlan.nombrePlan}"></option>
-            </th:block>
-        </select><br>
-        <label class="col-form-label" for="habitacion">Habitacion:</label>
-        <select class="form-control" id="habitacion" name="habitacion" required>
-            <th:block th:each="habitacion : ${habitaciones}" >
-                <option th:value="${Habitaciones_numero.numero}" th:text="${Habitaciones_numero.numero}" th:selected="${reserva!=null || reserva.Habitaciones_numero.numero == Habitaciones_numero.numero}"></option>
-            </th:block>
-        </select><br>
+        <label for="cantidadPersonas" class="col-form-label">Usuario:</label>
+        <input class="form-control" type="Usuario_idUser" id="Usuario_idUser" name="Usuario_idUser" required th:value=${reserva.Usuario_idUser}><br>
+        <label for="cantidadPersonas" class="col-form-label">Plan:</label>
+        <input class="form-control" type="text" id="Planes_nombrePlan" name="Planes_nombrePlan" required th:value=${reserva.Planes_nombrePlan}><br>
+        <label for="cantidadPersonas" class="col-form-label">Habitacion:</label>
+        <input class="form-control" type="number" id="Habitaciones_numero" name="Habitaciones_numero" required th:value=${reserva.Habitaciones_numero}><br>
         
         <div class="text-center">
             <input type="submit" value="Guardar" class="btn btn-primary">

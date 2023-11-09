@@ -20,10 +20,10 @@ public class Habitacion {
 
     @ManyToOne
     @JoinColumn(name = "TIPOSH_NOMBRETH", referencedColumnName = "NOMBRETH")
-    private TipoH TipoH_nombreTH;
+    private TipoH TiposH_nombreTH;
 
-    public Habitacion(TipoH TipoH_nombreTH){
-        this.TipoH_nombreTH = TipoH_nombreTH;
+    public Habitacion(TipoH TiposH_nombreTH){
+        this.TiposH_nombreTH = TiposH_nombreTH;
 
     }
     public Habitacion(){;}
@@ -33,11 +33,11 @@ public class Habitacion {
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
-    public TipoH getTipoH_nombreTipo() {
-        return TipoH_nombreTH;
+    public TipoH getTiposH_nombreTipo() {
+        return TiposH_nombreTH;
     }
-    public void setTipoH_nombreTipo(TipoH tipoH_nombreTipo) {
-        TipoH_nombreTH = tipoH_nombreTipo;
+    public void setTiposH_nombreTipo(TipoH tiposH_nombreTipo) {
+        TiposH_nombreTH = tiposH_nombreTipo;
     }
 
     

@@ -10,11 +10,9 @@
     <div th:fragment = "habitacionForm(titulo)" class="container border border-2 w-25"> 
         <h1 class="text-center" th:text="${titulo}"></h1>
         <form>
-            <label class="col-form-label" for="tipo">Tipo:</label>
-            <select class="form-control" id="tipo" name="tipo" required>
-            <th:block th:each="tipo : ${tipos}" >
-                <option th:value="${TipoH_nombreTH.nombreTH}" th:text="${TipoH_nombreTH.nombreTH}" th:selected="${habitacion!=null || habitacion.TipoH_nombreTH.nombreTH == TipoH_nombreTH.nombreTH}"></option>
-            </th:block>
+            <label class="col-form-label">Tipo:</label>
+            <input class="form-control" type="text" id="TIPOSH_NOMBRETH" name="TIPOSH_NOMBRETH" required th:value="${habitacion.TIPOSH_NOMBRETH}" />
+            
         </select><br>
 
 

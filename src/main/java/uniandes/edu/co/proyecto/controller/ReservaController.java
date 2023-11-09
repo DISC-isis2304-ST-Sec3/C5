@@ -25,10 +25,10 @@ public class ReservaController {
     @GetMapping("/reservas")
     public String reservas(Model model){
 
-        Collection<RespuestaRFC6> RF6 = reservasRepository.analizarOperacion();
-        model.addAttribute("fecha_maxima_ocupacion", RF6.iterator().next().getfecha_maxima_ocupacion());
-        model.addAttribute("fecha_maximos_ingresos", RF6.iterator().next().getfecha_maximos_ingresos());
-        model.addAttribute("fecha_minima_demanda", RF6.iterator().next().getfecha_minima_demanda());
+        //Collection<RespuestaRFC6> RF6 = reservasRepository.analizarOperacion();
+        //model.addAttribute("fecha_maxima_ocupacion", RF6.iterator().next().getfecha_maxima_ocupacion());
+        //model.addAttribute("fecha_maximos_ingresos", RF6.iterator().next().getfecha_maximos_ingresos());
+        //model.addAttribute("fecha_minima_demanda", RF6.iterator().next().getfecha_minima_demanda());
         
 
         model.addAttribute("reservas", reservasRepository.darReservas());

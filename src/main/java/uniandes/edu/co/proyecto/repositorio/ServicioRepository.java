@@ -61,7 +61,7 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer>{
                     "GROUP BY s.nombreservicio\n" + //
                     "ORDER BY total_consumos DESC\n" + //
                     "FETCH FIRST 20 ROWS ONLY", nativeQuery = true)
-    Collection<RespuestaRFC2> dar20MasPopulares(@Param("fechaInicio") String fechaInicio , @Param("fechafin") String fechaFin);
+    Collection<RespuestaRFC2> dar20MasPopulares(@Param("fechaInicio") String fechaInicio, @Param("fechaFin") String fechaFin );
 
 
     @Query(value = "SELECT s.nombreservicio, rs.fecha, rs.duracion, s.costo\n" + //

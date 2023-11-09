@@ -32,13 +32,13 @@ public interface HabitacionRepository extends JpaRepository<Habitacion,Integer>{
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO habitaciones (numero, TipoH_nombreTH) VALUES ( hotelAndes_sequence.nextval , :TipoH_nombreTH)", nativeQuery = true)
-    void insertarHabitaciones(@Param("TipoH_nombreTH") String TipoH_nombreTH);
+    @Query(value = "INSERT INTO habitaciones (numero, TiposH_nombreTH) VALUES ( hotelAndes_sequence.nextval , :TiposH_nombreTH)", nativeQuery = true)
+    void insertarHabitaciones(@Param("TiposH_nombreTH") String TiposH_nombreTH);
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE habitaciones SET TipoH_nombreTH = :TipoH_nombreTH WHERE numero = :numero", nativeQuery = true)
-    void actualizarHabitaciones(@Param("numero") Integer numero, @Param("TipoH_nombreTH") String TipoH_nombreTH);
+    @Query(value = "UPDATE habitaciones SET TiposH_nombreTH = :TiposH_nombreTH WHERE numero = :numero", nativeQuery = true)
+    void actualizarHabitaciones(@Param("numero") Integer numero, @Param("TiposH_nombreTH") String TiposH_nombreTH);
     
     @Modifying
     @Transactional
