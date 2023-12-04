@@ -273,67 +273,10 @@ public class ClienteController {
     }
 
 
-
-    @GetMapping("/clientesExcelentes")
-    public String obtenerClientesExcelentes(Model model) {
-        // Definir las operaciones de la agregación
-        LookupOperation lookupOperation = LookupOperation.newLookup()
-                .from("ReservasAlojamientos")
-                .localField("reservaAlojamiento_id")
-                .foreignField("_id")
-                .as("reservasAlojamientos");
-
-        UnwindOperation unwindOperation = Aggregation.unwind("$reservasAlojamientos");
-
-        GroupOperation groupOperation = Aggregation.group("_id")
-                .first("$_id").as("_id")
-                .first("acompañantes").as("acompañantes")
-                .first("cuenta").as("cuenta")
-                .first("reservaTerminada").as("reservaTerminada")
-                .first("reservaAlojamiento_id").as("reservaAlojamiento_id")
-                .first("habitaciones").as("habitaciones")
-                .push("reservasAlojamientos.fechaEntrada").as("reservas");
-
-        ConditionalOperators.Cond cond = ConditionalOperators.when(
-            ComparisonOperators.Gte.valueOf(ArrayOperators.Size.lengthOfArray("reservas")).greaterThanEqualToValue(2)
-                        .and(ArrayOperators.ArrayElemAt.arrayOf("reservas.fechaEntrada").elementAt(0))
-                                .compareTo(ArrayOperators.ArrayElemAt.arrayOf("reservas.fechaEntrada").elementAt(1))
-                                        .lessThanValue(0)
-                        .and(ArrayOperators.ArrayElemAt.arrayOf("reservas.fechaEntrada").elementAt(0))
-                                .compareTo(
-                                        ArrayOperators.Add.valueOf(
-                                                ArrayOperators.ArrayElemAt.arrayOf("reservas.fechaEntrada").elementAt(1))
-                                                .add(3 * 30 * 24 * 60 * 60 * 1000)
-                                ).lessThanEqualToValue(0)
-        ).then(true).otherwise(false);
-
-        AggregationExpression clienteExcelente = ConditionalOperators.ifNull(cond).then(false).otherwise(true);
-
-        AggregationProjectionOperation projectOperation = Aggregation.project()
-                .and("_id").as("_id")
-                .and("acompañantes").as("acompañantes")
-                .and("cuenta").as("cuenta")
-                .and("reservaTerminada").as("reservaTerminada")
-                .and("reservaAlojamiento_id").as("reservaAlojamiento_id")
-                .and("habitaciones").as("habitaciones")
-                .and(clienteExcelente).as("clienteExcelente");
-
-        MatchOperation matchOperation = Aggregation.match(Criteria.where("clienteExcelente").is(true));
-
-        // Construir la agregación
-        Aggregation aggregation = Aggregation.newAggregation(
-                lookupOperation,
-                unwindOperation,
-                groupOperation,
-                projectOperation,
-                matchOperation
-        );
-
-        // Ejecutar la agregación y obtener resultados como un List<Map>
-        List<Map> resultados = mongoTemplate.aggregate(aggregation, "clientes", Map.class).getMappedResults();
-
-        model.addAttribute("resultados", resultados);
-        return "clientesExcelentes";
+    @GetMapping("/excelentes")
+    public List<Cliente> obtenerClientesExcelentes() {
+        return clienteRepository.obtenerClientesExcelentes();
     }
+
 
 }
