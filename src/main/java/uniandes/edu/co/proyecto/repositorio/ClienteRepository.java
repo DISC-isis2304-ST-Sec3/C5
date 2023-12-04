@@ -9,7 +9,10 @@ import uniandes.edu.co.proyecto.modelo.Cliente;
 public interface ClienteRepository extends MongoRepository<Cliente, String>{
 
         List<Cliente> encontrarPorId(String id);
+
+        
 }
+
 
 
 

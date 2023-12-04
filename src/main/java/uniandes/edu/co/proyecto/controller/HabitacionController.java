@@ -3,10 +3,12 @@ package uniandes.edu.co.proyecto.controller;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.aggregation.LookupOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -147,4 +149,14 @@ public class HabitacionController {
         return "redirect:/habitaciones";
 
     }
+
+    @GetMapping("/mostrarResultadosAgregacion")
+    public String mostrarDineroRecolectado(Model model) {
+        AggregationResults<Map> resultados = habitacionRepository.obtenerCostosConsumoPorHabitacion();
+        List<Map> habitacionesAgregadas = resultados.getMappedResults();
+        model.addAttribute("habitacionesAgregadas", habitacionesAgregadas);
+
+        return "resultados";
+    }
+
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
 
 import javax.swing.text.html.Option;
 
@@ -11,7 +12,17 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationExpression;
+import org.springframework.data.mongodb.core.aggregation.ArithmeticOperators;
+import org.springframework.data.mongodb.core.aggregation.ArrayOperators;
+import org.springframework.data.mongodb.core.aggregation.ComparisonOperators;
+import org.springframework.data.mongodb.core.aggregation.ConditionalOperators;
+import org.springframework.data.mongodb.core.aggregation.GroupOperation;
 import org.springframework.data.mongodb.core.aggregation.LookupOperation;
+import org.springframework.data.mongodb.core.aggregation.MatchOperation;
+import org.springframework.data.mongodb.core.aggregation.ProjectionOperation;
+import org.springframework.data.mongodb.core.aggregation.UnwindOperation;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -24,6 +35,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.data.mongodb.core.FindAndModifyOptions;
 
 import uniandes.edu.co.proyecto.modelo.Cliente;
 import uniandes.edu.co.proyecto.modelo.ConsumoServicio;
@@ -164,6 +179,161 @@ public class ClienteController {
         
         return "redirect:/clientes";
 
+    }
+
+    public void actualizarReservaTerminada(String clienteId) {
+    // Crea un criterio para buscar el cliente por su ID
+    Criteria criteria = Criteria.where("_id").is(clienteId);
+
+    // Crea la consulta con el criterio
+    Query query = new Query(criteria);
+
+    // Crea la actualización para establecer la reservaTerminada a true
+    Update update = new Update().set("reservaTerminada", true);
+
+    // Realiza la actualización utilizando el método updateFirst
+    mongoTemplate.updateFirst(query, update, Cliente.class);
+
+}
+
+
+@GetMapping("/mostrarResultadosAgregacion")
+    public String mostrarResultadosRFC2(Model model) {
+        // Definir las operaciones de la agregación
+        LookupOperation lookupOperation = LookupOperation.newLookup()
+                .from("ReservasAlojamientos")
+                .localField("reservaAlojamiento_id")
+                .foreignField("_id")
+                .as("reservaAlojamientoInfo");
+
+        ProjectionOperation projectionOperation = Aggregation.project()
+                .and("_id").as("_id")
+                .and("habitacion.numero").as("numeroHab")
+                .and(ArithmeticOperators.Divide.valueOf(
+                        ArrayOperators.ArrayElemAt.arrayOf("reservaAlojamientoInfo.numeroNoches").elementAt(0))
+                        .divideBy(365)).as("porcentajeOcupacion");
+
+        MatchOperation matchOperation = Aggregation.match(
+                Criteria.where("reservaAlojamientoInfo.fechaEntrada").gte("2023-01-01T00:00:00Z")
+                        .lt("2024-01-01T00:00:00Z")
+        );
+
+        // Construir la agregación
+        Aggregation aggregation = Aggregation.newAggregation(
+                lookupOperation,
+                projectionOperation,
+                matchOperation
+        );
+
+        // Ejecutar la agregación y obtener resultados como un List<Map>
+        List<Map> resultados = mongoTemplate.aggregate(aggregation, "clientes", Map.class).getMappedResults();
+
+        model.addAttribute("resultados", resultados);
+        return "resultados";
+    }
+
+
+
+    @GetMapping("/mostrarCostoConsumo")
+    public String mostrarCostoConsumo(Model model, @RequestParam(name = "_id") String clienteId) {
+        // Definir las operaciones de la agregación
+        LookupOperation lookupOperation = LookupOperation.newLookup()
+                .from("ConsumosServicio")
+                .localField("habitaciones.consumosServicios_id")
+                .foreignField("_id")
+                .as("consumosServiciosInfo");
+
+        MatchOperation matchClienteId = Aggregation.match(Criteria.where("_id").is(clienteId));
+
+        UnwindOperation unwindOperation = Aggregation.unwind("consumosServiciosInfo");
+
+        MatchOperation matchFecha = Aggregation.match(
+                Criteria.where("consumosServiciosInfo.fecha")
+                        .gte("2023-01-01T00:00:00Z")
+                        .lte("2023-12-31T23:59:59Z") // Ajusta según necesites
+        );
+
+        GroupOperation groupOperation = Aggregation.group("_id")
+                .sum("consumosServiciosInfo.costo").as("totalCostoConsumo");
+
+        // Construir la agregación
+        Aggregation aggregation = Aggregation.newAggregation(
+                matchClienteId,
+                lookupOperation,
+                unwindOperation,
+                matchFecha,
+                groupOperation
+        );
+
+        // Ejecutar la agregación y obtener resultados como un List<Map>
+        List<Map> resultados = mongoTemplate.aggregate(aggregation, "clientes", Map.class).getMappedResults();
+
+        model.addAttribute("resultados", resultados);
+        return "costoConsumo";
+    }
+
+
+
+    @GetMapping("/clientesExcelentes")
+    public String obtenerClientesExcelentes(Model model) {
+        // Definir las operaciones de la agregación
+        LookupOperation lookupOperation = LookupOperation.newLookup()
+                .from("ReservasAlojamientos")
+                .localField("reservaAlojamiento_id")
+                .foreignField("_id")
+                .as("reservasAlojamientos");
+
+        UnwindOperation unwindOperation = Aggregation.unwind("$reservasAlojamientos");
+
+        GroupOperation groupOperation = Aggregation.group("_id")
+                .first("$_id").as("_id")
+                .first("acompañantes").as("acompañantes")
+                .first("cuenta").as("cuenta")
+                .first("reservaTerminada").as("reservaTerminada")
+                .first("reservaAlojamiento_id").as("reservaAlojamiento_id")
+                .first("habitaciones").as("habitaciones")
+                .push("reservasAlojamientos.fechaEntrada").as("reservas");
+
+        ConditionalOperators.Cond cond = ConditionalOperators.when(
+            ComparisonOperators.Gte.valueOf(ArrayOperators.Size.lengthOfArray("reservas")).greaterThanEqualToValue(2)
+                        .and(ArrayOperators.ArrayElemAt.arrayOf("reservas.fechaEntrada").elementAt(0))
+                                .compareTo(ArrayOperators.ArrayElemAt.arrayOf("reservas.fechaEntrada").elementAt(1))
+                                        .lessThanValue(0)
+                        .and(ArrayOperators.ArrayElemAt.arrayOf("reservas.fechaEntrada").elementAt(0))
+                                .compareTo(
+                                        ArrayOperators.Add.valueOf(
+                                                ArrayOperators.ArrayElemAt.arrayOf("reservas.fechaEntrada").elementAt(1))
+                                                .add(3 * 30 * 24 * 60 * 60 * 1000)
+                                ).lessThanEqualToValue(0)
+        ).then(true).otherwise(false);
+
+        AggregationExpression clienteExcelente = ConditionalOperators.ifNull(cond).then(false).otherwise(true);
+
+        AggregationProjectionOperation projectOperation = Aggregation.project()
+                .and("_id").as("_id")
+                .and("acompañantes").as("acompañantes")
+                .and("cuenta").as("cuenta")
+                .and("reservaTerminada").as("reservaTerminada")
+                .and("reservaAlojamiento_id").as("reservaAlojamiento_id")
+                .and("habitaciones").as("habitaciones")
+                .and(clienteExcelente).as("clienteExcelente");
+
+        MatchOperation matchOperation = Aggregation.match(Criteria.where("clienteExcelente").is(true));
+
+        // Construir la agregación
+        Aggregation aggregation = Aggregation.newAggregation(
+                lookupOperation,
+                unwindOperation,
+                groupOperation,
+                projectOperation,
+                matchOperation
+        );
+
+        // Ejecutar la agregación y obtener resultados como un List<Map>
+        List<Map> resultados = mongoTemplate.aggregate(aggregation, "clientes", Map.class).getMappedResults();
+
+        model.addAttribute("resultados", resultados);
+        return "clientesExcelentes";
     }
 
 }
