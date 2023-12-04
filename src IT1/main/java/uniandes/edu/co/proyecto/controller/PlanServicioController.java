@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import uniandes.edu.co.proyecto.modelo.Plan;
 import uniandes.edu.co.proyecto.modelo.PlanServicio;
 import uniandes.edu.co.proyecto.modelo.PlanServicioPK;
-import uniandes.edu.co.proyecto.modelo.ServicioEmbedded;
+import uniandes.edu.co.proyecto.modelo.Servicio;
 import uniandes.edu.co.proyecto.repositorio.PlanRepository;
 import uniandes.edu.co.proyecto.repositorio.PlanServicioRepository;
 import uniandes.edu.co.proyecto.repositorio.ServicioRepository;
@@ -36,7 +36,7 @@ public class PlanServicioController {
 
     @PostMapping("/planesServicios/new/save")
     public String planGuardar(@ModelAttribute("Servicio_idServicio") int Servicio_idServicio, @ModelAttribute("Planes_nombrePlan") String Planes_nombrePlan ){
-        ServicioEmbedded servicio = servicioRepository.darServicio(Servicio_idServicio);
+        Servicio servicio = servicioRepository.darServicio(Servicio_idServicio);
         Plan plan = planRepository.darPlan(Planes_nombrePlan);
         PlanServicioPK pk = new PlanServicioPK(plan, servicio);
         PlanServicio planServicio = new PlanServicio();

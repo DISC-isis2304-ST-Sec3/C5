@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Plan</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+<body>
+</br>
+<form th:action="@{'/planes/' + ${nombrePlan} + '/edit/save'}" th:object="${plan}" method="post">
+    <div th:replace="~{fragments/planForm :: planForm(titulo='Editar plan', plan=${plan})}">
+    </div>
+</form>
+
+</body>
+</html>

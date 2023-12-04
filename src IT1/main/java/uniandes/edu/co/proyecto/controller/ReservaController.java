@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 import uniandes.edu.co.proyecto.modelo.Reserva;
-import uniandes.edu.co.proyecto.repositorio.ReservaAlojamientoRepository;
-import uniandes.edu.co.proyecto.repositorio.ReservaAlojamientoRepository.RespuestaRFC6;
+import uniandes.edu.co.proyecto.repositorio.ReservaRepository;
+import uniandes.edu.co.proyecto.repositorio.ReservaRepository.RespuestaRFC6;
 import uniandes.edu.co.proyecto.repositorio.ServicioRepository.RespuestaRFC8;
 
 @Controller
 public class ReservaController {
 
     @Autowired
-    private ReservaAlojamientoRepository reservasRepository;
+    private ReservaRepository reservasRepository;
 
     @GetMapping("/reservas")
     public String reservas(Model model){

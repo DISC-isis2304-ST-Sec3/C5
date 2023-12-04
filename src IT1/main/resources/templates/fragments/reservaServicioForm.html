@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fragmento</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+
+<body>
+
+    </br>
+    <div th:fragment="reservaServicioForm(titulo)" class="container border border-2 w-25">
+        <h1 class="text-center" th:text="${titulo}"></h1>
+    
+    <form>
+        <label for="fecha" class="col-form-label">Fecha:</label>
+        <input class="form-control" type="date" id="fecha" name="fecha" required th:value="${reservaServicio.fecha}" />
+        <label for="duracion" class="col-form-label">Duracion:</label>
+        <input class="form-control" type="number" id="duracion" name="duracion" required th:value="${reservaServicio.duracion}" />
+        <label for="Servicios_idServicio" class="col-form-label">Servicio:</label>
+        <input class="form-control" type="number" id="Servicios_idServicio" name="Servicios_idServicio" required th:value="${reservaServicio.Servicios_idServicio}" />
+        <label for="Reservas_idReserva" class="col-form-label">Reserva:</label>
+        <input class="form-control" type="number" id="Reservas_idReserva" name="Reservas_idReserva" required th:value="${reservaServicio.Reservas_idReserva}" />
+        <label for="Empleados_idEmpleado" class="col-form-label">Empleado:</label>
+        <input class="form-control" type="number" id="Empleados_idEmpleado" name="Empleados_idEmpleado" required th:value="${reservaServicio.Empleados_idEmpleado}" />
+        
+        <div class="text-center">
+            <input type="submit" value="Guardar" class="btn btn-primary">
+            <a th:href="@{/reservasServicios}" class="btn btn-primary">Cancelar</a>
+        </div>
+    </form>
+
+    </br>
+</div>
+
+</body>
+
+</html>

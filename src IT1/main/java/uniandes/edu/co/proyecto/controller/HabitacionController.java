@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import uniandes.edu.co.proyecto.modelo.HabitacionEmbedded;
+import uniandes.edu.co.proyecto.modelo.Habitacion;
 import uniandes.edu.co.proyecto.repositorio.HabitacionRepository;
 import uniandes.edu.co.proyecto.repositorio.HabitacionRepository.RespuestaRFC1;
 import uniandes.edu.co.proyecto.repositorio.HabitacionRepository.RespuestaRFC3;
@@ -39,17 +39,17 @@ public class HabitacionController {
     }
     @GetMapping("/habitaciones/new")
     public String habitacionForm(Model model){
-        model.addAttribute("habitacion", new HabitacionEmbedded());
+        model.addAttribute("habitacion", new Habitacion());
         return "habitacionNuevo";
     }
     @PostMapping("/habitaciones/new/save")
-    public String habitacionGuardar(@ModelAttribute HabitacionEmbedded habitacion){
+    public String habitacionGuardar(@ModelAttribute Habitacion habitacion){
         habitacionRepository.insertarHabitaciones(habitacion.getTiposH_nombreTipo().getNombreTipo());
         return "redirect:/habitaciones";
     }
     @GetMapping("/habitaciones/{numero}/edit")
     public String habitacionEditerForm(@PathVariable("numero") int numero, Model model){
-        HabitacionEmbedded habitacion = habitacionRepository.darHabitacion((numero));
+        Habitacion habitacion = habitacionRepository.darHabitacion((numero));
         if(habitacion != null){
             model.addAttribute("numero", numero);
             return "habitacionEditar";
@@ -58,7 +58,7 @@ public class HabitacionController {
         }
     }
     @PostMapping("/habitaciones/{numero}/edit/save")
-    public String habitacionEditarGuardar(@PathVariable("numero") int numero, @ModelAttribute HabitacionEmbedded habitacion){
+    public String habitacionEditarGuardar(@PathVariable("numero") int numero, @ModelAttribute Habitacion habitacion){
         habitacionRepository.actualizarHabitaciones(numero, habitacion.getTiposH_nombreTipo().getNombreTipo());;
         return "redirect:/habitaciones";
     }

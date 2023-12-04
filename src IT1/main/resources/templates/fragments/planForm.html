@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fragmento</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+
+<body>
+
+    </br>
+    <div th:fragment="planForm(titulo)" class="container border border-2 w-25">
+        <h1 class="text-center" th:text="${titulo}"></h1>
+    
+    <form>
+        <label class="col-form-label">Nombre:</label>
+        <input class="form-control" type="text" id="nombrePlan" name="nombrePlan" required th:value="${plan.nombrePlan}" />
+        <label for="descuento" class="col-form-label">Descuento:</label>
+        <input class="form-control" type="number" id="descuento" name="descuento" required th:value="${plan.descuento}" />
+        <label class="col-form-label" for="presupuesto">Presupuesto:</label> 
+        <label for="periodoVigenciaInicial" class="col-form-label">Periodo Vigencia Inicial:</label>
+        <input class="form-control" type="date" id="periodoVigenciaInicial" name="periodoVigenciaInicial" required th:value=${plan.periodoVigenciaInicial}><br>
+        <label for="periodoVigenciaFinal" class="col-form-label">Periodo Vigencia Final:</label>
+        <input class="form-control" type="date" id="periodoVigenciaFinal" name="periodoVigenciaFinal" required th:value=${plan.periodoVigenciaFinal}><br>
+        <div class="text-center">
+            <input type="submit" value="Guardar" class="btn btn-primary">
+            <a th:href="@{/planes}" class="btn btn-primary">Cancelar</a>
+        </div>
+    </form>
+
+    </br>
+</div>
+
+</body>
+
+</html>

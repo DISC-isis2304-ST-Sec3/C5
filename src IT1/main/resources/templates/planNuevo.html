@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Plan</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+<body>
+    </br>
+    <form th:action="@{/planes/new/save}" method="post">
+    <div th:replace="~{fragments/planForm :: planForm(titulo='Crear plan')}">
+    </div>
+    </form>
+</body>
+</html>

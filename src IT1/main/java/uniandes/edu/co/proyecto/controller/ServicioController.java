@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import uniandes.edu.co.proyecto.modelo.ServicioEmbedded;
+import uniandes.edu.co.proyecto.modelo.Servicio;
 import uniandes.edu.co.proyecto.repositorio.HabitacionRepository.RespuestaRFC1;
 import uniandes.edu.co.proyecto.repositorio.ServicioRepository.RespuestaRFC8;
 import uniandes.edu.co.proyecto.repositorio.ServicioRepository.RespuestaRFC2;
@@ -63,17 +63,17 @@ public class ServicioController {
     }
     @GetMapping("/servicios/new")
     public String servicioForm(Model model){
-        model.addAttribute("servicio", new ServicioEmbedded());
+        model.addAttribute("servicio", new Servicio());
         return "servicioNuevo";
     }
     @PostMapping("/servicios/new/save")
-    public String servicioGuardar(@ModelAttribute ServicioEmbedded servicio){
+    public String servicioGuardar(@ModelAttribute Servicio servicio){
         servicioRepository.insertarServicios(servicio.getNombreServicio(), servicio.getDescripcion(), servicio.getHorario(), servicio.getCapacidad(), servicio.getCosto());
         return "redirect:/servicios";
     }
     @GetMapping("/servicios/{idServicio}/edit")
     public String servicioEditerForm(@PathVariable("idServicio") int idServicio, Model model){
-        ServicioEmbedded servicio = servicioRepository.darServicio(idServicio);
+        Servicio servicio = servicioRepository.darServicio(idServicio);
         if(servicio != null){
             model.addAttribute("servicio", servicio);
             return "servicioEditar";
@@ -82,7 +82,7 @@ public class ServicioController {
         }
     }
     @PostMapping("/servicios/{idServicio}/edit/save")
-    public String servicioEditarGuardar(@PathVariable("idServicio") int idServicio, @ModelAttribute ServicioEmbedded servicio){
+    public String servicioEditarGuardar(@PathVariable("idServicio") int idServicio, @ModelAttribute Servicio servicio){
         servicioRepository.actualizarServicios(idServicio, servicio.getNombreServicio(), servicio.getDescripcion(), servicio.getHorario(), servicio.getCapacidad(), servicio.getCosto());
         return "redirect:/servicios";
     }

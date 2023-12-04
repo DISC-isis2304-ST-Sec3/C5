@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <div>
+        <h1>Lista de Usuarios</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo Documento</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Tipo de Usuario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <th:block th:each="usuario : ${usuarios}">
+                <tr>
+                    <td th:text="${usuario.idUser}"></td>
+                    <td th:text="${usuario.tipoDocumento}"></td>
+                    <td th:text="${usuario.nombreUsuario}"></td>
+                    <td th:text="${usuario.correo}"></td>
+                    <td th:text="${usuario.TiposUsuarios_tipoUser.tipoUser}"></td>
+                    <td>
+                        <a th:href="@{usuarios/{idUser}/edit(idUser=${usuario.idUser})}" >
+                            Editar
+                        </a>
+                        <a th:href="@{usuarios/{idUser}/delete(idUser=${usuario.idUser})}" 
+                        onclick="return confirm('¿Está seguro de eliminar el usuario?')">
+                            Borrar
+                        </a>
+                    </td>
+                </tr>
+            </th:block> 
+        </table>
+        <div>
+            <a th:href='@{usuarios/new}' class="btn btn-primary">Añadir usuario</a>
+            <a th:href="@{/}" class="btn btn-primary">Volver Atrás</a>
+
+    </div>
+</div>
+    
+</body>
+</html>
