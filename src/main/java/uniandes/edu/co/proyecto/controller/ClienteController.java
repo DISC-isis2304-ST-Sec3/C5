@@ -9,6 +9,9 @@ import javax.swing.text.html.Option;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.LookupOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -23,8 +26,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import uniandes.edu.co.proyecto.modelo.Cliente;
+import uniandes.edu.co.proyecto.modelo.ConsumoServicio;
 import uniandes.edu.co.proyecto.modelo.HabitacionEmbedded;
+import uniandes.edu.co.proyecto.modelo.ReservaAlojamiento;
 import uniandes.edu.co.proyecto.repositorio.ClienteRepository;
+import uniandes.edu.co.proyecto.repositorio.ConsumoServicioRepository;
+import uniandes.edu.co.proyecto.repositorio.ReservaAlojamientoRepository;
 
 
 
@@ -35,6 +42,12 @@ public class ClienteController {
     
     @Autowired
     private ClienteRepository clienteRepository;
+
+    @Autowired
+    private ReservaAlojamientoRepository reservaAlojamientoRepository;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
     
     @GetMapping("/clientes")
@@ -48,10 +61,28 @@ public class ClienteController {
         return "index";
     }
 
+    //Referenciado
+    @GetMapping("/mostrarResultadosAgregacion")
+    public String mostrarResultados(Model model) {
+        LookupOperation lookupOperation = LookupOperation.newLookup()
+                .from("reservasAlojamientos")
+                .localField("reservasAlojamientos")
+                .foreignField("_id")
+                .as("reservaAlojamiento_id");
+
+        Aggregation aggregation = Aggregation.newAggregation(lookupOperation);
+
+        List<Cliente> clientes = mongoTemplate.aggregate(aggregation, "clientes", Cliente.class).getMappedResults();
+        model.addAttribute("clientes", clientes);
+
+        return "resultados";
+    }
+
     @GetMapping("/clientForm")
     public String mostrarFormulario(Model model) {
         // Creamos una instancia vacía para el nuevo BebidaTipos
         model.addAttribute("nuevoCliente", new Cliente());
+        model.addAttribute("reservaAlojamiento_id", reservaAlojamientoRepository.findAll());
         return "clientesForm";
     }
 
@@ -69,6 +100,17 @@ public class ClienteController {
         // Agregamos la bebida a la lista de bebidas en el nuevo tipo de bebida
         nuevoCliente.setHabitacion(nuevaHabitacion);
 
+
+        ReservaAlojamiento nuevaReservaAlojamiento = new ReservaAlojamiento(
+            nuevoCliente.getReservaAlojamiento().get(0).getFechaEntrada(),
+            nuevoCliente.getReservaAlojamiento().get(0).getFechaSalida(),
+            nuevoCliente.getReservaAlojamiento().get(0).getCantidadPersonas(),
+            nuevoCliente.getReservaAlojamiento().get(0).getNumeroNoches()
+        );
+
+        reservaAlojamientoRepository.save(nuevaReservaAlojamiento);
+            
+        nuevoCliente.setReservaAlojamiento(Collections.singletonList(nuevaReservaAlojamiento));
 
         // Guardamos el nuevo tipo de bebida
         clienteRepository.save(nuevoCliente);
@@ -95,7 +137,7 @@ public class ClienteController {
 
     @PostMapping("/addHablitacionSave")
     public String añadirHabitacionSave(@RequestParam("_id") String id,
-    @ModelAttribute("hebitaciones") HabitacionEmbedded habitacion){
+    @ModelAttribute("habitacion") HabitacionEmbedded habitacion){
 
         // Creamos una nueva bebida utilizando los datos del formulario
         HabitacionEmbedded nuevaHabitacion = new HabitacionEmbedded(

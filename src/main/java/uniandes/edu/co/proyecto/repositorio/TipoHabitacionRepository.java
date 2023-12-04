@@ -4,7 +4,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import uniandes.edu.co.proyecto.modelo.TipoHabitacionEmbedded;
 
-public interface TipoHRepository extends MongoRepository<TipoHabitacionEmbedded,String>{
+public interface TipoHabitacionRepository extends MongoRepository<TipoHabitacionEmbedded,String>{
 
     
 }
